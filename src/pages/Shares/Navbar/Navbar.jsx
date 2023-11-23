@@ -4,11 +4,11 @@ const Navbar = () => {
   const listItem = (
     <>
       <li>
-        <NavLink to='/'>Home</NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
 
       <li>
-        <NavLink>All properties</NavLink>
+        <NavLink to="allProperties">All properties</NavLink>
       </li>
 
       <li>
