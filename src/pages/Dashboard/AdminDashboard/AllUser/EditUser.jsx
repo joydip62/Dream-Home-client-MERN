@@ -26,7 +26,7 @@ const EditUser = () => {
                   title: "User updated successfully.",
                   showConfirmButton: false,
                   timer: 1500,
-                });
+                });  
                 reset();
                 navigate("/dashboard/allUser");
               }
@@ -83,9 +83,9 @@ const EditUser = () => {
                 <option disabled value="">
                   Select type
                 </option>
-                <option value="Admin">Admin</option>
-                <option value="User">User</option>
-                <option value="Agent">Agent</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <option value="agent">Agent</option>
               </select>
             </label>
           </div>

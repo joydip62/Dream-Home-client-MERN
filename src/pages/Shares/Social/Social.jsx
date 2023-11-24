@@ -19,6 +19,7 @@ const Social = () => {
         email: res.user?.email,
         name: res.user?.displayName,
         photoURL: res.user?.photoURL,
+        role: "user",
       };
       axiosPublic.post("/users", userInfo).then(() => {
         Swal.fire({
