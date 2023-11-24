@@ -4,12 +4,10 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 // import toast from "react-hot-toast";
 import Swal from "sweetalert2";
-import toast from "react-hot-toast";
 import Social from "../Shares/Social/Social";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 
-  
 const Register = () => {
   const { createUser, handleUpdateProfile } = useAuth();
   const location = useLocation();
@@ -20,84 +18,61 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    createUser(data.email, data.password).then((result) => {
-      // const loggedUser = result.user;
-      console.log(data.name, data.photoURL);
-      handleUpdateProfile(data.name, data.photoURL)
-        .then(() => {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "You have successfully register with email password!",
-            showConfirmButton: false,
-            timer: 1500,
+    createUser(data.email, data.password)
+      .then(() => {
+        // const loggedUser = result.user;
+        console.log(data.name, data.photoURL);
+        handleUpdateProfile(data.name, data.photoURL)
+          .then(() => {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "You have successfully register with email password!",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate(from, { replace: true });
+            // create user entry in the database
+            // const userInfo = {
+            //   name: data.name,
+            //   email: data.email,
+            // };
+            // axiosPublic.post("/users", userInfo).then((res) => {
+            //   if (res.data.insertedId) {
+            //     console.log("user added to the database");
+            //     reset();
+            //     Swal.fire({
+            //       position: "top-end",
+            //       icon: "success",
+            //       title: "User created successfully.",
+            //       showConfirmButton: false,
+            //       timer: 1500,
+            //     });
+            //     navigate(location?.state ? location.state : "/");
+            //   }
+            // });
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...Something went wrong!",
+              text: `${error.message}`,
+            });
           });
-          navigate(from, { replace: true });
-          // create user entry in the database
-          // const userInfo = {
-          //   name: data.name,
-          //   email: data.email,
-          // };
-          // axiosPublic.post("/users", userInfo).then((res) => {
-          //   if (res.data.insertedId) {
-          //     console.log("user added to the database");
-          //     reset();
-          //     Swal.fire({
-          //       position: "top-end",
-          //       icon: "success",
-          //       title: "User created successfully.",
-          //       showConfirmButton: false,
-          //       timer: 1500,
-          //     });
-          //     navigate(location?.state ? location.state : "/");
-          //   }
-          // });
-        })
-        .catch((error) => console.log(error));
-    });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...Something went wrong!",
+          text: `${error.message}`,
+        });
+      });
   };
 
-  // const handleCreateUser = (e) => {
-  //   e.preventDefault();
-  //   const name = e.target.name.value;
-  //   const photoUrl = e.target.photoUrl.value;
-  //   const email = e.target.email.value;
-  //   const password = e.target.password.value;
-
-  //   if (password.length < 6) {
-  //     const toastId = toast.loading("Loading");
-  //     toast.error("Your password must be at least 6 characters", {
-  //       id: toastId,
-  //     });
-  //     return;
-  //   } else if (!/^(?=.*?[a-z])/.test(password)) {
-  //     const toastId = toast.loading("Loading");
-  //     toast.error("Your password must be at least 1 lowercase", {
-  //       id: toastId,
-  //     });
-  //     return;
-  //   } else if (!/(?=.*?[A-Z])/.test(password)) {
-  //     const toastId = toast.loading("Loading");
-  //     toast.error("Your password must be at least 1 uppercase", {
-  //       id: toastId,
-  //     });
-  //     return;
-  //   } else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
-  //     const toastId = toast.loading("Loading");
-  //     toast.error(
-  //       "Your password must be at least 1 special character(#?!@$%^&*-)",
-  //       {
-  //         id: toastId,
-  //       }
-  //     );
-  //     return;
-  //   }
-  // };
   return (
     <div>
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-10">

@@ -16,8 +16,7 @@ which will contain:
 - property title.
 ============================================================================================
 
-2. The navbar will have a website name with the logo, Home, All properties, Dashboard and Login.
-Your website will have these routes. Except for the Home route, other routes will be private.
+Done ----------- 2. The navbar will have a website name with the logo, Home, All properties, Dashboard and Login. Your website will have these routes. Except for the Home route, other routes will be private.
 ============================================================================================
 
 3. After successfully performing any CRUD - Create, Read, Update, Delete operation, please, show a
@@ -222,27 +221,28 @@ the delete button of any review card then that review will be removed from this 
 the users page who has made this review.
 ============================================================================================
 
-10. You Must implement Email and password-based Authentication. This means you will have to
-implement the Registration and the login page. Users should be able to toggle between Login and
+Done ----------- 10. You Must implement Email and password-based Authentication. This means you will have to implement the Registration and the login page. Users should be able to toggle between Login and
 Registration view.
 
-On the Registration page, display errors when:
-The password
-- is less than 6 characters
-- don't have a capital letter
-- don't have a special character
-On the Login page, display errors when:
-- password doesn't match
-- email doesn't match
-You can take the error message from Firebase. You can show the error below the input fields or via
-alert/toast. If you use alert/toast, do not implement the browser alert.
+Done ----------- On the Registration page, display errors when:
+Done ----------- The password
+Done ----------- - is less than 6 characters
+Done ----------- - don't have a capital letter
+Done ----------- - don't have a special character
+Done ----------- On the Login page, display errors when:
+Done ----------- - password doesn't match
+Done ----------- - email doesn't match
+Done ----------- You can take the error message from Firebase. You can show the error below Done ----------- the input fields or via
+Done ----------- alert/toast. If you use alert/toast, do not implement the browser alert.
 ============================================================================================
 
 11.Use Tanstack query with mutation for data fetching and posting.
 You must do the the following:
-1. Once logged in, the user name, profile picture and the logout button should appear on the navbar. If
-the user clicks on the logout button, make sure to log him/her out.
-Done --- 2. Add a 404 page (not found page)
+
+Done ----------- 1. Once logged in, the user name, profile picture and the logout button Done ----------- should appear on the navbar. If
+Done ----------- the user clicks on the logout button, make sure to log him/her out.
+Done ----------- 2. Add a 404 page (not found page)
+
 3. **Commits & readme:**
 - Minimum 20 meaningful git commits on the client-side repository.
 - Minimum 10 meaningful commits on the server-side repository.

@@ -31,17 +31,24 @@ const Login = () => {
       const email = form.email.value;
       const password = form.password.value;
 
-      userLogIn(email, password).then(() => {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "You logged in with email password!",
-          showConfirmButton: false,
-          timer: 1500,
+      userLogIn(email, password)
+        .then(() => {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "You logged in with email password!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          navigate(from, { replace: true });
+        })
+        .catch((error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...Something went wrong!",
+            text: `${error.message}`,
+          });
         });
-        navigate(from, { replace: true });
-          // navigate(location?.state ? location.state : "/");
-      });
 
       // try {
       //   const user = await userLogIn(email, password);
