@@ -1,8 +1,14 @@
+import { Helmet } from "react-helmet-async";
 
 const AllProperties = () => {
     return (
       <div>
-        <h1 className="text-5xl font-extrabold text-center mb-5">All Properties</h1>
+        <Helmet>
+          <title>Dream Home | All Properties</title>
+        </Helmet>
+        <h1 className="text-5xl font-extrabold text-center mb-5">
+          All Properties
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <div className="card bg-base-100 shadow-xl">
             <figure>
@@ -27,8 +33,6 @@ const AllProperties = () => {
 
             <button className="btn btn-primary">Details</button>
           </div>
-
-          
         </div>
       </div>
     );

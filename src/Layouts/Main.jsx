@@ -1,13 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../pages/Shares/Footer/Footer";
 import Navbar from "../pages/Shares/Navbar/Navbar";
 
 const Main = () => {
-    return (
+
+  const location = useLocation();
+  const noHeaderFooter =
+    location.pathname.includes("login") ||
+    location.pathname.includes("register");
+
+  return (
       <div className="space-y-5 px-5">
-        <Navbar />
+        {noHeaderFooter || <Navbar />}
         <Outlet />
-        <Footer />
+        {noHeaderFooter || <Footer />}
       </div>
     );
 };

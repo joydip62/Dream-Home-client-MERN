@@ -1,6 +1,34 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const from = location.state?.from?.pathname || "/";
+
+  const { user, logout } = useAuth();
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          text: "You Have Successfully Logout",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `Something went wrong! ${err.message}`,
+        });
+      });
+  };
   const listItem = (
     <>
       <li>
@@ -14,6 +42,31 @@ const Navbar = () => {
       <li>
         <NavLink>Dashboard</NavLink>
       </li>
+      {user ? (
+        <>
+          <li>
+            <p>{user?.displayName}</p>
+          </li>
+          <li>
+            <div className="w-16 rounded-full">
+              <img alt="" src={user?.photoURL} />
+            </div>
+          </li>
+          <button className="btn btn-info" onClick={handleLogout}>
+            Logout
+          </button>
+        </>
+      ) : (
+        <>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/register">Register</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
