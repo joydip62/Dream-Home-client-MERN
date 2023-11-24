@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import Social from "../Shares/Social/Social";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Register = () => {
   const { createUser, handleUpdateProfile } = useAuth();
@@ -15,19 +16,39 @@ const Register = () => {
   const from = location.state?.from?.pathname || "/";
   const [showPass, setShowPass] = useState(false);
 
+  const axiosPublic = useAxiosPublic();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     createUser(data.email, data.password)
       .then(() => {
-        // const loggedUser = result.user;
-        console.log(data.name, data.photoURL);
         handleUpdateProfile(data.name, data.photoURL)
           .then(() => {
+            // create user entry in the database
+            const userInfo = {
+              name: data.name,
+              email: data.email,
+              photoURL: data.photoURL,
+            };
+            axiosPublic.post("/users", userInfo).then((res) => {
+              if (res.data.insertedId) {
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "User created successfully.",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                reset();
+                navigate(location?.state ? location.state : "/");
+              }
+            });
             Swal.fire({
               position: "top-end",
               icon: "success",
@@ -36,25 +57,6 @@ const Register = () => {
               timer: 1500,
             });
             navigate(from, { replace: true });
-            // create user entry in the database
-            // const userInfo = {
-            //   name: data.name,
-            //   email: data.email,
-            // };
-            // axiosPublic.post("/users", userInfo).then((res) => {
-            //   if (res.data.insertedId) {
-            //     console.log("user added to the database");
-            //     reset();
-            //     Swal.fire({
-            //       position: "top-end",
-            //       icon: "success",
-            //       title: "User created successfully.",
-            //       showConfirmButton: false,
-            //       timer: 1500,
-            //     });
-            //     navigate(location?.state ? location.state : "/");
-            //   }
-            // });
           })
           .catch((error) => {
             Swal.fire({

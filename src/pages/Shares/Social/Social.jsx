@@ -3,17 +3,24 @@ import { useLocation, useNavigate } from "react-router-dom";
 // import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 const Social = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
-  
-  const { googleLogin } = useAuth();
 
+  const { googleLogin } = useAuth();
+  const axiosPublic = useAxiosPublic();
 
   const handleGoogleSignIn = () => {
-    googleLogin().then(() => {
+    googleLogin().then((res) => {
+      const userInfo = {
+        email: res.user?.email,
+        name: res.user?.displayName,
+        photoURL: res.user?.photoURL,
+      };
+      axiosPublic.post("/users", userInfo).then(() => {
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -22,7 +29,15 @@ const Social = () => {
           timer: 1500,
         });
         navigate(from, { replace: true });
-
+      });
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "You logged in with Google!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      navigate(from, { replace: true });
     });
   };
 

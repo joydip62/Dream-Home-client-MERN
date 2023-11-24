@@ -40,12 +40,12 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink>Dashboard</NavLink>
+        <NavLink to="dashboard/adminHome">Dashboard</NavLink>
       </li>
       {user ? (
         <>
           <li>
-            <p>{user?.displayName}</p>
+            <p className="text-xl">{user?.displayName}</p>
           </li>
           <li>
             <div className="w-16 rounded-full">
