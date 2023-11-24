@@ -4,6 +4,7 @@ import Main from "../Layouts/Main";
 import AllProperties from "../pages/AllProperties/AllProperties";
 import AdminHome from "../pages/Dashboard/AdminDashboard/AdminHome";
 import AllUser from "../pages/Dashboard/AdminDashboard/AllUser/AllUser";
+import EditUser from "../pages/Dashboard/AdminDashboard/AllUser/EditUser";
 import Home from "../pages/Home/Home/Home";
 // import NotFoundPage from "../pages/Error/NotFoundPage";
 import Login from "../pages/Login/Login";
@@ -48,14 +49,20 @@ export const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
-    // admin related route
+      // admin related route
       {
         path: "adminHome",
         element: <AdminHome />,
       },
       {
         path: "allUser",
-        element: <AllUser/>
+        element: <AllUser />,
+      },
+
+      {
+        path: "updateUser/:id",
+        element: <EditUser />,
+        loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`),
       },
     ],
   },

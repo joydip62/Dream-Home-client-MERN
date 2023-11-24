@@ -39,6 +39,7 @@ const AllUser = () => {
           }
         });
     }
+
   return (
     <div>
       <h2 className="text-5xl text-center mb-5">All Users {users.length}</h2>
@@ -60,7 +61,7 @@ const AllUser = () => {
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img 
+                        <img
                           src={item?.photoURL}
                           alt="Avatar Tailwind CSS Component"
                         />
@@ -74,7 +75,7 @@ const AllUser = () => {
                 </td>
                 <td>{item?.role}</td>
                 <th>
-                  <Link>
+                  <Link to={`/dashboard/updateUser/${item._id}`}>
                     <button className="btn btn-info btn-sm">
                       <FaEdit />
                     </button>
