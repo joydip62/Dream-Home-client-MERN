@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
@@ -81,11 +82,15 @@ const AddedProperties = () => {
               </div>
               <div className="justify-start space-x-5">
                 {item?.status === "rejected" ? (
-                  <button className="btn " disabled>Rejected</button>
-                ) : (
-                  <button className="btn btn-info">
-                    <FaEdit />
+                  <button className="btn " disabled>
+                    Rejected
                   </button>
+                ) : (
+                  <Link to={`/dashboard/agentEditProperties/${item._id}`}>
+                    <button className="btn btn-info">
+                      <FaEdit />
+                    </button>
+                  </Link>
                 )}
 
                 <button

@@ -92,16 +92,13 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "agentEditProperties/:id",
+        path: "agentAddProperties",
         element: (
           <AgentRoute>
-            <EditProperty/>
+            <AddProperties />
           </AgentRoute>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/properties/${params.id}`),
       },
-
       {
         path: "agentAddedProperties",
         element: (
@@ -109,6 +106,16 @@ export const router = createBrowserRouter([
             <AddedProperties />
           </AgentRoute>
         ),
+      },
+      {
+        path: "agentEditProperties/:id",
+        element: (
+          <AgentRoute>
+            <EditProperty />
+          </AgentRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/properties/${params.id}`),
       },
 
       // ============================ user related route ====================
