@@ -14,6 +14,7 @@ import AgentHome from "../pages/Dashboard/AgentDashboard/AgentHome";
 import UserHome from "../pages/Dashboard/UserDashboard/UserHome";
 import AdminRoute from "./AdminRoute";
 import AgentRoute from "./AgentRoute";
+import AddProperties from "../pages/Dashboard/AgentDashboard/AddProperties/AddProperties";
 
 export const router = createBrowserRouter([
   {
@@ -64,7 +65,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "allUser",
-        element: <AdminRoute><AllUser /></AdminRoute>,
+        element: (
+          <AdminRoute>
+            <AllUser />
+          </AdminRoute>
+        ),
       },
 
       {
@@ -80,6 +85,15 @@ export const router = createBrowserRouter([
         element: (
           <AgentRoute>
             <AgentHome />
+          </AgentRoute>
+        ),
+      },
+
+      {
+        path: "agentAddedProperties",
+        element: (
+          <AgentRoute>
+            <AddProperties/>
           </AgentRoute>
         ),
       },

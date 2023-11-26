@@ -14,17 +14,18 @@ which will contain:
 - Reviewer Image.
 - Review description.
 - property title.
-============================================================================================
+============================================ 2 =========================================
 
 Done ----------- 2. The navbar will have a website name with the logo, Home, All properties, Dashboard and Login. Your website will have these routes. Except for the Home route, other routes will be private.
-============================================================================================
+============================================ 3 =========================================
 
 3. After successfully performing any CRUD - Create, Read, Update, Delete operation, please, show a
 relevant toast/sweet alert. (Don't use the browser alert() function. otherwise, marks will be reduced)
-============================================================================================
+============================================ 4 =========================================
 
 4. Add two extra sections to the home page in addition to the sections mentioned above.
-============================================================================================
+
+============================================ 5 =========================================
 
 5. All properties page: This page will contain all the admin verified properties which are added by
 all the real estate agents.Each card will contain the following informations:
@@ -38,7 +39,8 @@ all the real estate agents.Each card will contain the following informations:
 - Details button.(clicking on the details button will redirect the user to the property details
 page.See requirement 6)
 -This will be a private/protected route.
-============================================================================================
+
+============================================ 6 =========================================
 
 6.Details page: This page should display detailed information about the property. What you will
 include in the detailed information is entirely up to you but make sure to add property
@@ -50,15 +52,17 @@ reviews for that specific property which are made by the users.
 -There will also be a review button on this page.Clicking this button a user can add a review for this
 specific property through a modal.
 -This will be a private/protected route.
-============================================================================================
+
+============================================ 7 =========================================
 
 7.User Dashboard (Private Route):
 -When a user clicks on the Dashboard, he/she will be redirected to a page where there will be
 the following routes:
-A. My Profile.
+Done ----------- A. My Profile.
 B. Wishlist.
 C. Property bought.
 D. My reviews.
+
 Done ----------- My Profile page: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
 
 Wishlist: This page will contain all the properties which the user have wishlisted by clicking the “Add
@@ -72,6 +76,7 @@ to wishlist” button on the details page.Each card will contain the following i
 - Price range.
 - Make an offer button.
 - remove button.
+
 -Clicking the “Make an offer” button will navigate the user to a new page where there will be a form
 which will have some input fields.
 - Property title (readonly)
@@ -83,6 +88,7 @@ was specified by the agent of that property)
 - buyer name (readonly)
 - buying date.
 - offer button
+
 -By clicking the offer button the user can offer an amount (This amount must be in between the agent
 specified price range.If the price is not in between the price range then the offer will not be completed
 and an error message will be shown) to the agent for that specific property.This information will be
@@ -110,19 +116,29 @@ any property.Each review card will contain
 - delete button.
 -If the user clicks the delete button then the review will be deleted from the my reviews page and also
 from the database.
-============================================================================================
+
+============================================ 8 =========================================
 
 8.Agent Dashboard (Private Route and only the users who has the agent
 role will be able to see these routes):
 -When an agent clicks on the Dashboard, he/she will be redirected to a page where there will
 be the following routes:
 A. Agent Profile .
-B. My added properties.
-C. My sold properties.
-D. Requested properties.
-Agent Profile: On this page there will be some information about the logged in user.The
-information must include user name,user image,role(if the user is a regular user then don’t show
-anything).You can add other relevant information if you wish.
+B. Add Property.
+C. My added properties.
+D. My sold properties.
+E. Requested properties.
+Done ----------- Agent Profile: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
+
+Add Property: Create an `Add Property` page where there will be a form for the agent to add a property. The form will have:
+- Property title.
+- Property location.
+- Property image (agents will be able to upload images from their local pc or mobile).
+- Agent name (readonly).
+- Agent email(readonly).
+- Price range.
+- Add property button.
+On clicking the “Add property” button the property will be saved into the database.
 My added properties: On this page an agent will see all his/her added properties.each card will
 contain
 - Property image.
@@ -172,7 +188,8 @@ each data will contain
 there.This will also happen for the reject button and “rejected” status will be shown.
 -If the Agent accepts an offer for a specific property then other offers for that property will be rejected
 automatically and “rejected” status will be shown threre.
-============================================================================================
+
+============================================ 9 =========================================
 
 9.Admin Dashboard (Private Route and only the users who has the admin
 role will be able to see these routes):
@@ -218,7 +235,8 @@ Manage reviews: All the user reviews for all the properties will be shown here.E
 contain reviewer image,reviewer email,reviewer name,review and a delete button.If the admin clicks
 the delete button of any review card then that review will be removed from this page and also from
 the users page who has made this review.
-============================================================================================
+
+============================================ 10 =========================================
 
 Done ----------- 10. You Must implement Email and password-based Authentication. This means you will have to implement the Registration and the login page. Users should be able to toggle between Login and
 Registration view.
@@ -233,7 +251,8 @@ Done ----------- - password doesn't match
 Done ----------- - email doesn't match
 Done ----------- You can take the error message from Firebase. You can show the error below Done ----------- the input fields or via
 Done ----------- alert/toast. If you use alert/toast, do not implement the browser alert.
-============================================================================================
+
+============================================ 11 =========================================
 
 11.Use Tanstack query with mutation for data fetching and posting.
 You must do the the following:
@@ -251,7 +270,8 @@ to add your client-side live link to your website here.**
 5. After reloading the page of a private route, the user should not be redirected to the login page.
 6. Make the website responsive. Make sure the site looks different on desktop and mobile responsive.
 Tablet responsiveness is optional.
-============================================================================================
+
+============================================ 12 =========================================
 
 Bonus Tasks
 1. Add a search functionality on the “All properties” page based on the property title.
@@ -274,7 +294,8 @@ advertisement section on the homepage.After this “Remove Advertise” button w
 and “Advertise" button will be enabled.
 -Admin can advertise at most 6 properties.If admin tries to advertise more properties then an
 error message will be shown.
-============================================================================================
+
+========================================= Optional =========================================
 
 Optional Tasks
 You have to implement two tasks from the following:
