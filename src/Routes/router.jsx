@@ -10,6 +10,10 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import AgentHome from "../pages/Dashboard/AgentDashboard/AgentHome";
+import UserHome from "../pages/Dashboard/UserDashboard/UserHome";
+import AdminRoute from "./AdminRoute";
+import AgentRoute from "./AgentRoute";
 
 export const router = createBrowserRouter([
   {
@@ -52,7 +56,11 @@ export const router = createBrowserRouter([
       // admin related route
       {
         path: "adminHome",
-        element: <AdminHome />,
+        element: (
+          <AdminRoute>
+            <AdminHome />
+          </AdminRoute>
+        ),
       },
       {
         path: "allUser",
@@ -62,7 +70,24 @@ export const router = createBrowserRouter([
       {
         path: "updateUser/:id",
         element: <EditUser />,
-        loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/users/${params.id}`),
+      },
+
+      // agent related route
+      {
+        path: "agentHome",
+        element: (
+          <AgentRoute>
+            <AgentHome />
+          </AgentRoute>
+        ),
+      },
+
+      // user related route
+      {
+        path: "userHome",
+        element: <UserHome />,
       },
     ],
   },

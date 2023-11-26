@@ -1,11 +1,15 @@
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import useAdmin from "../../../hooks/useAdmin";
+import useAgent from "../../../hooks/useAgent";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+  const [isAdmin] = useAdmin();
+  const [isAgent] = useAgent();
+
   const from = location.state?.from?.pathname || "/";
 
   const { user, logout } = useAuth();
@@ -39,9 +43,23 @@ const Navbar = () => {
         <NavLink to="allProperties">All properties</NavLink>
       </li>
 
-      <li>
-        <NavLink to="dashboard/adminHome">Dashboard</NavLink>
-      </li>
+      {user && isAdmin && (
+        <li>
+          <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
+        </li>
+      )}
+
+      {user && !isAdmin && isAgent && (
+        <li>
+          <NavLink to="/dashboard/agentHome">Dashboard</NavLink>
+        </li>
+      )}
+
+      {user && !isAdmin && !isAgent && (
+        <li>
+          <NavLink to="/dashboard/userHome">Dashboard</NavLink>
+        </li>
+      )}
       {user ? (
         <>
           <li>

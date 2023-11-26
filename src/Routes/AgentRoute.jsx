@@ -1,22 +1,23 @@
 import { Navigate, useLocation } from "react-router-dom";
-import useAdmin from "../hooks/useAdmin";
 import useAuth from "../hooks/useAuth";
+import useAgent from "../hooks/useAgent";
 
-const AdminRoute = ({ children }) => {
-  const [isAdminLoading, isAdmin] = useAdmin();
+
+const AgentRoute = ({children}) => {
+  const [isAgent, isAgentLoading] = useAgent();
   const { user, loading } = useAuth();
   const location = useLocation();
 
-  if (loading || isAdminLoading) {
+  if (loading || isAgentLoading) {
     return (
       <span className="loading loading-infinity w-1/4 block mx-auto"></span>
     );
   }
-  if (user && isAdmin) {
+  if (user && isAgent) {
     return children;
   }
 
   return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
 };
 
-export default AdminRoute;
+export default AgentRoute;

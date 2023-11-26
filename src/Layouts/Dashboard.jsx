@@ -1,9 +1,11 @@
 import { FaHome } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
+import useAgent from "../hooks/useAgent";
 
 const Dashboard = () => {
-  const {isAdmin} = useAdmin();
+  const [isAdmin] = useAdmin();
+  const [isAgent] = useAgent();
   return (
     <div>
       <div className="drawer lg:drawer-open">
@@ -28,8 +30,8 @@ const Dashboard = () => {
           ></label>
           <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
-            {isAdmin ? (
-              <>
+            {
+              isAdmin ? <>
                 <li>
                   <NavLink to="/dashboard/adminHome">
                     <FaHome />
@@ -45,8 +47,15 @@ const Dashboard = () => {
                 </li>
 
               </>
-            ) : (
-              <>
+             : isAgent ? <>
+                <li>
+                  <NavLink to="/dashboard/agentHome">
+                    <FaHome />
+                    Agent Home
+                  </NavLink>
+                </li>
+                </> 
+              :<>
                 <li>
                   <NavLink to="/dashboard/userHome">
                     <FaHome />
@@ -54,7 +63,8 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
               </>
-            )}
+             
+            }
 
             <div className="divider"></div>
             <li>
