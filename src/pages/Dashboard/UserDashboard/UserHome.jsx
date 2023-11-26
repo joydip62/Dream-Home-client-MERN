@@ -1,9 +1,10 @@
+import Profile from "../Profile";
 
 const UserHome = () => {
     return (
-        <div>
-            <h2 className="text-5xl">User home</h2>
-        </div>
+      <div>
+       <Profile/>
+      </div>
     );
 };
 

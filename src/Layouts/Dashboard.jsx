@@ -1,4 +1,4 @@
-import { FaHome } from "react-icons/fa";
+import { FaCartPlus, FaHome, FaStar, FaUser } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useAgent from "../hooks/useAgent";
@@ -30,41 +30,59 @@ const Dashboard = () => {
           ></label>
           <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
-            {
-              isAdmin ? <>
+            {isAdmin ? (
+              <>
                 <li>
                   <NavLink to="/dashboard/adminHome">
                     <FaHome />
                     Admin Home
                   </NavLink>
                 </li>
-                
+
                 <li>
                   <NavLink to="/dashboard/allUser">
                     <FaHome />
                     All User
                   </NavLink>
                 </li>
-
               </>
-             : isAgent ? <>
+            ) : isAgent ? (
+              <>
                 <li>
                   <NavLink to="/dashboard/agentHome">
                     <FaHome />
                     Agent Home
                   </NavLink>
                 </li>
-                </> 
-              :<>
+              </>
+            ) : (
+              <>
                 <li>
                   <NavLink to="/dashboard/userHome">
+                    <FaUser />
+                    My Profile
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/userWishlist">
+                    <FaCartPlus />
+                    Wishlist
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/userPropertyBought">
                     <FaHome />
-                    User Home
+                    Property bought
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/userReviews">
+                    <FaStar />
+                    My reviews
                   </NavLink>
                 </li>
               </>
-             
-            }
+            )}
 
             <div className="divider"></div>
             <li>

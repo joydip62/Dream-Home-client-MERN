@@ -3,7 +3,7 @@ import useAdmin from "../hooks/useAdmin";
 import useAuth from "../hooks/useAuth";
 
 const AdminRoute = ({ children }) => {
-  const [isAdminLoading, isAdmin] = useAdmin();
+  const [isAdmin, isAdminLoading] = useAdmin();
   const { user, loading } = useAuth();
   const location = useLocation();
 

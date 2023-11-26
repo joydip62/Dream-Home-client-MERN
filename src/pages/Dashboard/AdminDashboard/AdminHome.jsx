@@ -1,8 +1,9 @@
+import Profile from "../Profile";
 
 const AdminHome = () => {
     return (
         <div>
-            <h2 className="text-5xl">Admin Home</h2>
+            <Profile/>
         </div>
     );
 };

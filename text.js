@@ -59,9 +59,8 @@ A. My Profile.
 B. Wishlist.
 C. Property bought.
 D. My reviews.
-My Profile page: On this page there will be some information about the logged in user.The
-information must include user name,user image,role(if the user is a regular user then don’t show
-anything).You can add other relevant information if you wish.
+Done ----------- My Profile page: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
+
 Wishlist: This page will contain all the properties which the user have wishlisted by clicking the “Add
 to wishlist” button on the details page.Each card will contain the following informations:
 - Property image.
