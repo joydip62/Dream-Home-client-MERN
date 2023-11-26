@@ -15,6 +15,8 @@ import UserHome from "../pages/Dashboard/UserDashboard/UserHome";
 import AdminRoute from "./AdminRoute";
 import AgentRoute from "./AgentRoute";
 import AddProperties from "../pages/Dashboard/AgentDashboard/AddProperties/AddProperties";
+import AddedProperties from "../pages/Dashboard/AgentDashboard/AddedProperties/AddedProperties";
+import EditProperty from "../pages/Dashboard/AgentDashboard/EditProperty/EditProperty";
 
 export const router = createBrowserRouter([
   {
@@ -54,7 +56,7 @@ export const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
-      // admin related route
+      // ======================= admin related route ======================
       {
         path: "adminHome",
         element: (
@@ -79,7 +81,7 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/users/${params.id}`),
       },
 
-      // agent related route
+      // =========================== agent related route ======================
       {
         path: "agentHome",
         element: (
@@ -90,15 +92,26 @@ export const router = createBrowserRouter([
       },
 
       {
+        path: "agentEditProperties/:id",
+        element: (
+          <AgentRoute>
+            <EditProperty/>
+          </AgentRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/properties/${params.id}`),
+      },
+
+      {
         path: "agentAddedProperties",
         element: (
           <AgentRoute>
-            <AddProperties/>
+            <AddedProperties />
           </AgentRoute>
         ),
       },
 
-      // user related route
+      // ============================ user related route ====================
       {
         path: "userHome",
         element: <UserHome />,

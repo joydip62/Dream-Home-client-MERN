@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import { FaHome } from "react-icons/fa";
+import useAuth from "../../../../hooks/useAuth";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -10,6 +10,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const AddProperties = () => {
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
+  const { user } = useAuth();
 
   const {
     register,
@@ -20,38 +21,48 @@ const AddProperties = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
-    const imageFile = { image: data.image[0] };
+    const imageFile = { image: data.propertyImage[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
       headers: {
         "content-Type": "multipart/form-data",
       },
     });
     if (res.data.success) {
-      const menuItem = {
-        name: data.name,
-        category: data.category,
-        price: parseFloat(data.price),
-        recipe: data.recipe,
-        image: res.data.data.display_url,
+      const propertyData = {
+        propertyTitle: data.propertyTitle,
+        propertyLocation: data.propertyLocation,
+        propertyPrice: parseFloat(data.propertyPrice),
+        propertyImage: res.data.data.display_url,
+        agentName: user.displayName,
+        agentEmail: user.email,
+        status: "pending"
       };
-      const menuRes = await axiosSecure.post("/menu", menuItem);
-      if (menuRes.data.insertedId) {
+      const propertyResult = await axiosSecure.post("/properties", propertyData);
+      console.log(propertyResult);
+      if (propertyResult.data.insertedId) {
         Swal.fire({
-          title: "Good job!",
-          text: "Menu item inserted into database",
+          position: "top-end",
           icon: "success",
-        });
+          text: "The property inserted into database",
+          showConfirmButton: false,
+          timer: 1500,
+        }); 
         reset();
       }
     }
   };
   return (
-    <div >
-      - Property title. - Property location. - Property image (agents will be
-      able to upload images from their local pc or mobile). - Agent name
-      (readonly). - Agent email(readonly). - Price range. - Add property button.
-      <h2 className="text-5xl font-bold">Add The Properties</h2>
+    <div>
+      {/* 
+      - Property title.
+      - Property location.
+      - Price range.
+      - Property image (agents will be able to upload images from their local pc
+        or mobile)
+      - Agent name (readonly).
+      - Agent email(readonly).
+      */}
+      <h2 className="text-5xl font-bold">Add The Property</h2>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control w-full">
@@ -73,7 +84,7 @@ const AddProperties = () => {
                 <span className="label-text">Property location*</span>
               </label>
               <input
-                type="number"
+                type="text"
                 placeholder="Type here"
                 className="input input-bordered w-full"
                 {...register("propertyLocation", { required: true })}
@@ -94,7 +105,7 @@ const AddProperties = () => {
               {errors.propertyPrice && <span>This field is required</span>}
             </div>
           </div>
-          <div className="flex gap-6">
+          <div className="flex gap-6 mt-5">
             <div className="form-control w-full">
               <input
                 type="file"
@@ -104,10 +115,37 @@ const AddProperties = () => {
               {errors.propertyImage && <span>This field is required</span>}
             </div>
           </div>
+          <div className="flex gap-6">
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Agent Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Type here"
+                className="input input-bordered w-full"
+                defaultValue={user.displayName}
+                {...register("agentName", { disabled: true })}
+              />
+              {errors.agentName && <span>This field is required</span>}
+            </div>
 
-          <button className="btn mt-5">
-            Add Item <FaHome className="ml-4" />
-          </button>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Agent Email</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Type here"
+                className="input input-bordered w-full"
+                defaultValue={user.email}
+                {...register("agentEmail", { disabled: true })}
+              />
+              {errors.agentEmail && <span>This field is required</span>}
+            </div>
+          </div>
+
+          <button className="btn mt-5">Add Property</button>
         </form>
       </div>
     </div>

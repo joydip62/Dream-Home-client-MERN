@@ -130,7 +130,7 @@ D. My sold properties.
 E. Requested properties.
 Done ----------- Agent Profile: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
 
-Add Property: Create an `Add Property` page where there will be a form for the agent to add a property. The form will have:
+Done ----------- Add Property: Create an `Add Property` page where there will be a form for the agent to add a property. The form will have:
 - Property title.
 - Property location.
 - Property image (agents will be able to upload images from their local pc or mobile).
@@ -139,32 +139,35 @@ Add Property: Create an `Add Property` page where there will be a form for the a
 - Price range.
 - Add property button.
 On clicking the “Add property” button the property will be saved into the database.
-My added properties: On this page an agent will see all his/her added properties.each card will
-contain
+
+
+My added properties: On this page an agent will see all his/her added properties.each card will contain
 - Property image.
 - Property title.
 - property location.
 - Agent name.
 - Agent image.
-- verification status.(verification status will be modified by the admin.if the admin verifies the
-property then the verification status will be “verified” and if the admin rejects then the verification
-status will be “rejected”)
 - Price range.
-- update button (if the verification status is “rejected” then the update button will disappear,
-which means the agent won't be able to update the property).
+
+- verification status.(verification status will be modified by the admin.if the admin verifies the property then the verification status will be “verified” and if the admin rejects then the verification status will be “rejected”)
+
+
+- update button (if the verification status is “rejected” then the update button will disappear, which means the agent won't be able to update the property).
 ->delete button
--Clicking on the `Update button` will redirect the user to a form page where the form will have the
-following fields:
+
+
+
+-Clicking on the `Update button` will redirect the user to a form page where the form will have the following fields:
 -> Property image.
 -> Property title.
 -> property location.
 -> Agent name.(readonly)
 -> Agent email.(readonly)
 -> Price range.
--Initially these fields will be filled up by previous values but the agent can modify these values.If the
-user clicks the submit button then the data will be updated in the database.
--clicking the delete button will remove the property from the “My added properties” and also from the
-database.
+-Initially these fields will be filled up by previous values but the agent can modify these values.If the user clicks the submit button then the data will be updated in the database.
+-clicking the delete button will remove the property from the “My added properties” and also from the database.
+
+
 My sold properties: On this page all the sold properties of the specific agent will be shown.Only
 the properties for which the buyer has paid for will be shown here.Show these data in a tabular
 format.Each data will contain->

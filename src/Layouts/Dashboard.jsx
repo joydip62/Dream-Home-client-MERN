@@ -1,4 +1,4 @@
-import { FaCartPlus, FaHome, FaHouseDamage, FaJediOrder, FaPlus, FaStar, FaUser } from "react-icons/fa";
+import { FaCartPlus, FaHome, FaHouseDamage, FaJediOrder, FaList, FaPlus, FaStar, FaUser } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useAgent from "../hooks/useAgent";
@@ -18,7 +18,7 @@ const Dashboard = () => {
           >
             All Menu
           </label>
-          <div>
+          <div className="px-10">
             <Outlet></Outlet>
           </div>
         </div>
@@ -55,14 +55,14 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/agentAddedProperties">
+                  <NavLink to="/dashboard/agentAddProperties">
                     <FaPlus />
                     Add Property
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/agentAddedProperties">
-                    <FaPlus />
+                    <FaList />
                     My added properties
                   </NavLink>
                 </li>
