@@ -1,10 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
-import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const ManageProperties = () => {
-  const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const { data: properties = [], refetch } = useQuery({
     queryKey: ["properties"],

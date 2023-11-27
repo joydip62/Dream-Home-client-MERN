@@ -14,20 +14,22 @@ which will contain:
 - Reviewer Image.
 - Review description.
 - property title.
-============================================ 2 =========================================
+====================================== 2 done =========================================
 
 Done ----------- 2. The navbar will have a website name with the logo, Home, All properties, Dashboard and Login. Your website will have these routes. Except for the Home route, other routes will be private.
-============================================ 3 =========================================
 
-3. After successfully performing any CRUD - Create, Read, Update, Delete operation, please, show a
+===================================== 3 done =========================================
+
+Done ----------- 3. After successfully performing any CRUD - Create, Read, Update, Delete operation, please, show a
 relevant toast/sweet alert. (Don't use the browser alert() function. otherwise, marks will be reduced)
+
 ============================================ 4 =========================================
 
 4. Add two extra sections to the home page in addition to the sections mentioned above.
 
-============================================ 5 =========================================
+====================================== 5 Done =========================================
 
-5. All properties page: This page will contain all the admin verified properties which are added by all the real estate agents.Each card will contain the following informations:
+Done -----------  5. All properties page: This page will contain all the admin verified properties which are added by all the real estate agents.Each card will contain the following informations:
 - Property image.
 - Property title.
 - property location.
@@ -39,20 +41,19 @@ relevant toast/sweet alert. (Don't use the browser alert() function. otherwise, 
 page.See requirement 6)
 -This will be a private/protected route.
 
-============================================ 6 =========================================
+======================================== 6 =========================================
 
-6.Details page: This page should display detailed information about the property. What you will
-include in the detailed information is entirely up to you but make sure to add property
-title,description,price range and agent name.
--There will be a button on the details page called “Add to wishlist”.Clicking this button will add the
-property on the wishlist page and also the information will be saved to the database.
--There will be a review section at the bottom of the details page where you have to show all the
-reviews for that specific property which are made by the users.
--There will also be a review button on this page.Clicking this button a user can add a review for this
-specific property through a modal.
+6.Details page: This page should display detailed information about the property. What you will include in the detailed information is entirely up to you but make sure to add property title, description, price range and agent name.
+
+-There will be a button on the details page called “Add to wishlist”.Clicking this button will add the property on the wishlist page and also the information will be saved to the database.
+
+-There will be a review section at the bottom of the details page where you have to show all the reviews for that specific property which are made by the users.
+
+-There will also be a review button on this page.Clicking this button a user can add a review for this specific property through a modal.
+
 -This will be a private/protected route.
 
-============================================ 7 =========================================
+====================================== 7 =========================================
 
 7.User Dashboard (Private Route):
 -When a user clicks on the Dashboard, he/she will be redirected to a page where there will be
@@ -88,11 +89,9 @@ was specified by the agent of that property)
 - buying date.
 - offer button
 
--By clicking the offer button the user can offer an amount (This amount must be in between the agent
-specified price range.If the price is not in between the price range then the offer will not be completed
-and an error message will be shown) to the agent for that specific property.This information will be
-saved to the database and also it will be added to users “Property bought” page with the status
-“pending”.
+-By clicking the offer button the user can offer an amount (This amount must be in between the agent specified price range.If the price is not in between the price range then the offer will not be completed and an error message will be shown) to the agent for that specific property.This information will be saved to the database and also it will be added to users “Property bought” page with the status “pending”.
+
+
 Property bought: All the properties which the user has offered for will be shown here.Each card will
 have the following information.
 - property location.
@@ -101,11 +100,10 @@ have the following information.
 - Agent name
 - offered amount.
 - status
--There will be a status on each card.initially the status will be “pending”.If the offer is accepted by the
-agent then this status will be “accepted” and a “Pay” button will appear on the card.Clicking the “Pay”
-button will redirect user to the payment page where the user can pay the offered amount through
-stripe or any other payment methods for that property.If the payment is completed then the status will
-be “bought” also payment transaction id will be shown in place of the pay button.
+-There will be a status on each card.initially the status will be “pending”.If the offer is accepted by the agent then this status will be “accepted” and a “Pay” button will appear on the card.Clicking the “Pay”
+button will redirect user to the payment page where the user can pay the offered amount through stripe or any other payment methods for that property.If the payment is completed then the status will be “bought” also payment transaction id will be shown in place of the pay button.
+
+
 My reviews: In this page a logged in user will see only his/her reviews which he/she has given for
 any property.Each review card will contain
 - property title
@@ -186,19 +184,18 @@ automatically and “rejected” status will be shown threre.
 
 ============================================ 9 =========================================
 
-9.Admin Dashboard (Private Route and only the users who has the admin
-role will be able to see these routes):
+9.Admin Dashboard (Private Route and only the users who has the admin role will be able to see these routes):
 -When an admin clicks on the Dashboard, he/she will be redirected to a page where there will
 be the following routes:
 Done ----------- A. Admin Profile.
-B. Manage Properties.
+Done ----------- B. Manage Properties.
 Done ----------- C. Manage Users.
 D. Manage reviews.
 
 Done ----------- Admin Profile: in this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you  wish.
 
 
-Manage properties:
+Done ----------- Manage properties:
 All the properties which the agents have added will be shown here in a tabular format.each data will have
 - property title.
 - Property location.
@@ -208,8 +205,8 @@ All the properties which the agents have added will be shown here in a tabular f
 - verify button
 - reject button.
 
--if the admin clicks the verify button then that property will be added to the “All properties” page with the verified status also verify button and reject button will disappear and a status “verified” will be shown there.
-If the admin clicks the reject button then the property will not be added to the all properties page and “rejected” status will be shown in place of verify and reject button.
+Done ----------- -if the admin clicks the verify button then that property will be added to the “All properties” page with the verified status also verify button and reject button will disappear and a status “verified” will be shown there.
+Done ----------- If the admin clicks the reject button then the property will not be added to the all properties page and “rejected” status will be shown in place of verify and reject button.
 
 
 Manage users: Show all the users in a tabular form where each row will have:
@@ -225,12 +222,9 @@ database by clicking the delete user button.
 -If the admin clicks the “Mark as fraud” button for any agent then that specific agent will be marked as fraud and a “Fraud” status will be shown in place of “Make admin” , “Make agent” and “Mark as Fraud” button also all the properties that the agent has added will be removed from the “All properties” page and advertisement section on the homepage and that agent will not be able to add any properties in the future.
 
 
-Manage reviews: All the user reviews for all the properties will be shown here.Each card will
-contain reviewer image,reviewer email,reviewer name,review and a delete button.If the admin clicks
-the delete button of any review card then that review will be removed from this page and also from
-the users page who has made this review.
+Manage reviews: All the user reviews for all the properties will be shown here.Each card will contain reviewer image,reviewer email,reviewer name,review and a delete button.If the admin clicks the delete button of any review card then that review will be removed from this page and also from the users page who has made this review.
 
-============================================ 10 =========================================
+==================================== 10 done =========================================
 
 Done ----------- 10. You Must implement Email and password-based Authentication. This means you will have to implement the Registration and the login page. Users should be able to toggle between Login and
 Registration view.
@@ -246,12 +240,13 @@ Done ----------- - email doesn't match
 Done ----------- You can take the error message from Firebase. You can show the error below Done ----------- the input fields or via
 Done ----------- alert/toast. If you use alert/toast, do not implement the browser alert.
 
-============================================ 11 =========================================
+===================================== 11 =========================================
 
 11.Use Tanstack query with mutation for data fetching and posting.
 You must do the the following:
 
-Done ----------- 1. Once logged in, the user name, profile picture and the logout button Done ----------- should appear on the navbar. If
+Done ----------- 1. Once logged in, the user name, profile picture and the logout button 
+Done ----------- should appear on the navbar. If
 Done ----------- the user clicks on the logout button, make sure to log him/her out.
 Done ----------- 2. Add a 404 page (not found page)
 
@@ -265,31 +260,24 @@ to add your client-side live link to your website here.**
 6. Make the website responsive. Make sure the site looks different on desktop and mobile responsive.
 Tablet responsiveness is optional.
 
-============================================ 12 =========================================
+====================================== 12 =========================================
 
 Bonus Tasks
 1. Add a search functionality on the “All properties” page based on the property title.
 2. Implement a sort functionality based on the price range on the “All properties” page.
-3. Implement JWT on login (Email/Password and social) and store the token.
-4. Add a section on My sold properties page of the Agent dashboard where the total property sold
-amount of a specific agent will be shown.
-5.Add another route on the admin dashboard called “Advertise property”.In this route all the admin
-verified properties will be shown in a tabular format.Each data will contain property image,property
-title,price range,Agent name “Advertise” and “Remove Advertise” button.
+Done ----------- 3. Implement JWT on login (Email/Password and social) and store the token.
+4. Add a section on My sold properties page of the Agent dashboard where the total property sold amount of a specific agent will be shown.
+5.Add another route on the admin dashboard called “Advertise property”.In this route all the admin verified properties will be shown in a tabular format.Each data will contain property image,property title,price range,Agent name “Advertise” and “Remove Advertise” button.
 -If a property is already advertised then the “Advertise” button will be disabled and “Remove
 Advertise” button will be enabled.
 -If a property is not already advertised then the “Remove Advertise” button will be disabled and
 “Advertise” button will be enabled.
--On clicking the “Advertise" button an admin can advertise a specific property.This property will
-be shown in the advertisement section on the homepage also the “Advertise” button will be disabled
-and “Remove Advertise" button will be enabled.
+-On clicking the “Advertise" button an admin can advertise a specific property.This property will be shown in the advertisement section on the homepage also the “Advertise” button will be disabled and “Remove Advertise" button will be enabled.
 -On clicking the “Remove Advertise” button an admin can remove a property from the
-advertisement section on the homepage.After this “Remove Advertise” button will be disabled
-and “Advertise" button will be enabled.
--Admin can advertise at most 6 properties.If admin tries to advertise more properties then an
-error message will be shown.
+advertisement section on the homepage.After this “Remove Advertise” button will be disabled and “Advertise" button will be enabled.
+-Admin can advertise at most 6 properties.If admin tries to advertise more properties then an error message will be shown.
 
-========================================= Optional =========================================
+=================================== Optional =========================================
 
 Optional Tasks
 You have to implement two tasks from the following:

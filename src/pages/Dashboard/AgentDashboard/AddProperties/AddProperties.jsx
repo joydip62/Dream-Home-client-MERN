@@ -31,11 +31,13 @@ const AddProperties = () => {
       const propertyData = {
         propertyTitle: data.propertyTitle,
         propertyLocation: data.propertyLocation,
+        propertyDescription: data.propertyDescription,
         propertyPrice: parseFloat(data.propertyPrice),
         propertyImage: res.data.data.display_url,
         agentName: user.displayName,
         agentEmail: user.email,
-        status: "pending"
+        agentImage: user?.photoURL,
+        status: "pending",
       };
       const propertyResult = await axiosSecure.post("/properties", propertyData);
       console.log(propertyResult);
@@ -53,15 +55,6 @@ const AddProperties = () => {
   };
   return (
     <div>
-      {/* 
-      - Property title.
-      - Property location.
-      - Price range.
-      - Property image (agents will be able to upload images from their local pc
-        or mobile)
-      - Agent name (readonly).
-      - Agent email(readonly).
-      */}
       <h2 className="text-5xl font-bold">Add The Property</h2>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -114,6 +107,17 @@ const AddProperties = () => {
               />
               {errors.propertyImage && <span>This field is required</span>}
             </div>
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Property Description*</span>
+            </label>
+            <textarea
+              className="textarea textarea-bordered h-24"
+              placeholder="Type here"
+              {...register("propertyDescription", { required: true })}
+            ></textarea>
+            {errors.propertyDescription && <span>This field is required</span>}
           </div>
           <div className="flex gap-6">
             <div className="form-control w-full">

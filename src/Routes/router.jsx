@@ -18,6 +18,7 @@ import AddProperties from "../pages/Dashboard/AgentDashboard/AddProperties/AddPr
 import AddedProperties from "../pages/Dashboard/AgentDashboard/AddedProperties/AddedProperties";
 import EditProperty from "../pages/Dashboard/AgentDashboard/EditProperty/EditProperty";
 import ManageProperties from "../pages/Dashboard/AdminDashboard/ManageProperties/ManageProperties";
+import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,18 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+
+      {
+        path: "/propertyDetails/:id",
+        element: (
+          <PrivateRoute>
+            <PropertyDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/properties/${params.id}`),
+      },
+
       {
         path: "/login",
         element: <Login />,
