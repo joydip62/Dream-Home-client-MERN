@@ -6,18 +6,6 @@ import Modal from "react-modal";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-
-const customStyles = {
-  content: {
-    // top: "50%",
-    // left: "50%",
-    // right: "auto",
-    // bottom: "auto",
-    //     marginRight: "-50%",
-    // transform: "translate(-50%, -50%)",
-  },
-};
-
 Modal.setAppElement("#root");
 
 const PropertyDetails = () => {
@@ -81,7 +69,7 @@ const PropertyDetails = () => {
       Swal.fire({
         position: "top-end",
         icon: "success",
-        text: "The property inserted into database",
+        text: "Your review posted successfully",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -91,6 +79,31 @@ const PropertyDetails = () => {
     }
   };
 
+  // wishlist insert
+  const handleWishList = async () => {
+    const wishListData = {
+      propertyId: property._id,
+      propertyTitle: property.propertyTitle,
+      propertyImage: property.propertyImage,
+      propertyLocation: property.propertyLocation,
+      propertyPrice: property.propertyPrice,
+      agentName: property.agentName,
+      user: user?.email,
+      status: "pending",
+    };
+    const wishListResult = await axiosSecure.post("/wishLists", wishListData);
+    if (wishListResult.data.insertedId) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        text: "Added the property in wish list",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      reset();
+      refetch();
+    }
+  };
   return (
     <>
       <div className="hero">
@@ -105,7 +118,9 @@ const PropertyDetails = () => {
             <p className="mb-2">Price : ${property?.propertyPrice}</p>
             <p className="mb-2">Location : ${property?.propertyLocation}</p>
             <p className="mb-2">Agent Name : ${property?.agentName}</p>
-            <button className="btn btn-primary">Add to wishlist</button>
+            <button className="btn btn-primary" onClick={handleWishList}>
+              Add to wishlist
+            </button>
             <button className="btn btn-info ml-5" onClick={handleOpenModal}>
               Give a Review
             </button>
@@ -113,7 +128,6 @@ const PropertyDetails = () => {
             <Modal
               className="w-2/3 mx-auto translate-y-1/2 bg-white border p-8"
               isOpen={isModalOpen}
-              style={customStyles}
               onRequestClose={handleCloseModal}
               contentLabel="Example Modal"
             >

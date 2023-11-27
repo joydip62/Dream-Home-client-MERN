@@ -65,8 +65,7 @@ D. My reviews.
 
 Done ----------- My Profile page: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
 
-Wishlist: This page will contain all the properties which the user have wishlisted by clicking the “Add
-to wishlist” button on the details page.Each card will contain the following informations:
+Wishlist: This page will contain all the properties which the user have wishlist by clicking the “Add to wishlist” button on the details page.Each card will contain the following information:
 - Property image.
 - Property title.
 - property location.
@@ -77,8 +76,7 @@ to wishlist” button on the details page.Each card will contain the following i
 - Make an offer button.
 - remove button.
 
--Clicking the “Make an offer” button will navigate the user to a new page where there will be a form
-which will have some input fields.
+-Clicking the “Make an offer” button will navigate the user to a new page where there will be a form which will have some input fields.
 - Property title (readonly)
 - Property location (readonly)
 - Agent name (readonly)
@@ -92,8 +90,7 @@ was specified by the agent of that property)
 -By clicking the offer button the user can offer an amount (This amount must be in between the agent specified price range.If the price is not in between the price range then the offer will not be completed and an error message will be shown) to the agent for that specific property.This information will be saved to the database and also it will be added to users “Property bought” page with the status “pending”.
 
 
-Property bought: All the properties which the user has offered for will be shown here.Each card will
-have the following information.
+Property bought: All the properties which the user has offered for will be shown here.Each card will have the following information.
 - property location.
 - property title.
 - property image
@@ -104,15 +101,13 @@ have the following information.
 button will redirect user to the payment page where the user can pay the offered amount through stripe or any other payment methods for that property.If the payment is completed then the status will be “bought” also payment transaction id will be shown in place of the pay button.
 
 
-My reviews: In this page a logged in user will see only his/her reviews which he/she has given for
-any property.Each review card will contain
+Done -----------  My reviews: In this page a logged in user will see only his/her reviews which he/she has given for any property.Each review card will contain
 - property title
 - agent name
 - review time
 - review description
 - delete button.
--If the user clicks the delete button then the review will be deleted from the my reviews page and also
-from the database.
+-If the user clicks the delete button then the review will be deleted from the my reviews page and also from the database.
 
 ============================================ 8 =========================================
 
