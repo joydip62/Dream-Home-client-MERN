@@ -27,8 +27,7 @@ relevant toast/sweet alert. (Don't use the browser alert() function. otherwise, 
 
 ============================================ 5 =========================================
 
-5. All properties page: This page will contain all the admin verified properties which are added by
-all the real estate agents.Each card will contain the following informations:
+5. All properties page: This page will contain all the admin verified properties which are added by all the real estate agents.Each card will contain the following informations:
 - Property image.
 - Property title.
 - property location.
@@ -123,9 +122,9 @@ from the database.
 role will be able to see these routes):
 -When an agent clicks on the Dashboard, he/she will be redirected to a page where there will
 be the following routes:
-A. Agent Profile .
-B. Add Property.
-C. My added properties.
+Done ----------- A. Agent Profile .
+Done ----------- B. Add Property.
+Done ----------- C. My added properties.
 D. My sold properties.
 E. Requested properties.
 Done ----------- Agent Profile: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
@@ -138,26 +137,20 @@ Done ----------- Add Property: Create an `Add Property` page where there will be
 - Agent email(readonly).
 - Price range.
 - Add property button.
-On clicking the “Add property” button the property will be saved into the database.
+Done ----------- On clicking the “Add property” button the property will be saved into the database.
 
-
-My added properties: On this page an agent will see all his/her added properties.each card will contain
+Done -----------  My added properties: On this page an agent will see all his/her added properties.each card will contain
 - Property image.
 - Property title.
 - property location.
 - Agent name.
 - Agent image.
 - Price range.
-
 - verification status.(verification status will be modified by the admin.if the admin verifies the property then the verification status will be “verified” and if the admin rejects then the verification status will be “rejected”)
-
-
 - update button (if the verification status is “rejected” then the update button will disappear, which means the agent won't be able to update the property).
 ->delete button
 
-
-
--Clicking on the `Update button` will redirect the user to a form page where the form will have the following fields:
+Done -----------  -Clicking on the `Update button` will redirect the user to a form page where the form will have the following fields:
 -> Property image.
 -> Property title.
 -> property location.
@@ -165,8 +158,7 @@ My added properties: On this page an agent will see all his/her added properties
 -> Agent email.(readonly)
 -> Price range.
 -Initially these fields will be filled up by previous values but the agent can modify these values.If the user clicks the submit button then the data will be updated in the database.
--clicking the delete button will remove the property from the “My added properties” and also from the database.
-
+Done -----------  clicking the delete button will remove the property from the “My added properties” and also from the database.
 
 My sold properties: On this page all the sold properties of the specific agent will be shown.Only
 the properties for which the buyer has paid for will be shown here.Show these data in a tabular
@@ -198,16 +190,16 @@ automatically and “rejected” status will be shown threre.
 role will be able to see these routes):
 -When an admin clicks on the Dashboard, he/she will be redirected to a page where there will
 be the following routes:
-A. Admin Profile.
+Done ----------- A. Admin Profile.
 B. Manage Properties.
-C. Manage Users.
+Done ----------- C. Manage Users.
 D. Manage reviews.
-Admin Profile: in this page there will be some information about the logged in user.The information
-must include user name,user image,role(if the user is a regular user then don’t show anything).You
-can add other relevant information if you wish.
+
+Done ----------- Admin Profile: in this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you  wish.
+
+
 Manage properties:
-All the properties which the agents have added will be shown here in a tabular format.each data will
-have
+All the properties which the agents have added will be shown here in a tabular format.each data will have
 - property title.
 - Property location.
 - Agent name
@@ -215,10 +207,11 @@ have
 - price range.
 - verify button
 - reject button.
--if the admin clicks the verify button then that property will be added to the “All properties” page with
-the verified status also verify button and reject button will disappear and a status “verified” will be
-shown there.If the admin clicks the reject button then the property will not be added to the all
-properties page and “rejected” status will be shown in place of verify and reject button.
+
+-if the admin clicks the verify button then that property will be added to the “All properties” page with the verified status also verify button and reject button will disappear and a status “verified” will be shown there.
+If the admin clicks the reject button then the property will not be added to the all properties page and “rejected” status will be shown in place of verify and reject button.
+
+
 Manage users: Show all the users in a tabular form where each row will have:
 ● User name
 ● User email
@@ -229,11 +222,9 @@ Manage users: Show all the users in a tabular form where each row will have:
 -The admin can make a user admin by clicking on the Make Admin button, admin can make a
 user “agent” by clicking the make agent button also the admin can delete a user from the
 database by clicking the delete user button.
--If the admin clicks the “Mark as fraud” button for any agent then that specific agent will be
-marked as fraud and a “Fraud” status will be shown in place of “Make admin” , “Make agent”
-and “Mark as Fraud” button also all the properties that the agent has added will be removed
-from the “All properties” page and advertisement section on the homepage and that agent will
-not be able to add any properties in the future.
+-If the admin clicks the “Mark as fraud” button for any agent then that specific agent will be marked as fraud and a “Fraud” status will be shown in place of “Make admin” , “Make agent” and “Mark as Fraud” button also all the properties that the agent has added will be removed from the “All properties” page and advertisement section on the homepage and that agent will not be able to add any properties in the future.
+
+
 Manage reviews: All the user reviews for all the properties will be shown here.Each card will
 contain reviewer image,reviewer email,reviewer name,review and a delete button.If the admin clicks
 the delete button of any review card then that review will be removed from this page and also from

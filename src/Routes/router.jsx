@@ -17,6 +17,7 @@ import AgentRoute from "./AgentRoute";
 import AddProperties from "../pages/Dashboard/AgentDashboard/AddProperties/AddProperties";
 import AddedProperties from "../pages/Dashboard/AgentDashboard/AddedProperties/AddedProperties";
 import EditProperty from "../pages/Dashboard/AgentDashboard/EditProperty/EditProperty";
+import ManageProperties from "../pages/Dashboard/AdminDashboard/ManageProperties/ManageProperties";
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +80,15 @@ export const router = createBrowserRouter([
         element: <EditUser />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/users/${params.id}`),
+      },
+
+      {
+        path: "adminManageProperties",
+        element: (
+          <AdminRoute>
+            <ManageProperties />
+          </AdminRoute>
+        ),
       },
 
       // =========================== agent related route ======================
