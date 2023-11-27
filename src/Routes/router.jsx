@@ -20,6 +20,7 @@ import EditProperty from "../pages/Dashboard/AgentDashboard/EditProperty/EditPro
 import ManageProperties from "../pages/Dashboard/AdminDashboard/ManageProperties/ManageProperties";
 import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 import MyReviews from "../pages/Dashboard/UserDashboard/MyReview/MyReviews";
+import WishLists from "../pages/Dashboard/UserDashboard/WishLists/WishLists";
 
 export const router = createBrowserRouter([
   {
@@ -152,6 +153,12 @@ export const router = createBrowserRouter([
         path: "userMyReviews",
         element: <MyReviews/>
       },
+      
+      {
+        path: "userWishLists",
+        element: <WishLists/>
+      },
+
 
     ],
   },

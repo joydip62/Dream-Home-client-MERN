@@ -95,7 +95,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/userWishlist">
+                  <NavLink to="/dashboard/userWishLists">
                     <FaCartPlus />
                     Wishlist
                   </NavLink>

@@ -32,7 +32,6 @@ const MyReviews = () => {
   });
 
   // delete review
-  // delete user
   const handleDeleteReview = (item) => {
     Swal.fire({
       title: "Are you sure?",

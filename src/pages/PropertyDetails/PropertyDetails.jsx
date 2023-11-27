@@ -1,11 +1,11 @@
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Modal from "react-modal";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import Modal from "react-modal";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import { useQuery } from "@tanstack/react-query";
 Modal.setAppElement("#root");
 
 const PropertyDetails = () => {
