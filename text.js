@@ -1,15 +1,15 @@
 /**
-design -- --- * 1. Home page will have a navbar, banner/slider, Advertisement section,Latest User review section and
-a footer.
+design -- --- * 1. Home page will have a navbar, banner/slider, Advertisement section,Latest User review section and a footer.
 design --- - Advertisement section: In this section there will be at least 4 cards which will contain
 - property image.
 - Property location.
 - price range.
 - verification status.
+
 - Details button.(clicking on the details button will redirect the user to the property
 details page.See requirement 6)
-- Latest User review: In this section there will be at least 3 latest(recently added) user reviews
-which will contain:
+
+- Latest User review: In this section there will be at least 3 latest(recently added) user reviews which will contain:
 - Reviewer name.
 - Reviewer Image.
 - Review description.
