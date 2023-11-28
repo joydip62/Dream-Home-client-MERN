@@ -93,6 +93,7 @@ const AddProperties = () => {
                 type="number"
                 placeholder="Type here"
                 className="input input-bordered w-full"
+                max="999999.99"
                 {...register("propertyPrice", { required: true })}
               />
               {errors.propertyPrice && <span>This field is required</span>}

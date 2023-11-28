@@ -81,20 +81,27 @@ const ApplyOffered = () => {
                 </div>
               </div>
               <div className="justify-start space-x-5">
-                {item?.status === "rejected" || item?.status === "pending" ? (
-                  <></>
+                {item?.status === "bought" ? (
+                  "Bought this Property"
                 ) : (
-                  <Link to={`/dashboard/userPay/${item._id}`}>
-                    <button className="btn btn-info">Pay</button>
-                  </Link>
-                )}
+                  <>
+                    {item?.status === "rejected" ||
+                    item?.status === "pending" ? (
+                      <></>
+                    ) : (
+                      <Link to={`/dashboard/userPay/${item._id}`}>
+                        <button className="btn btn-info">Pay</button>
+                      </Link>
+                    )}
 
-                <button
-                  className="btn btn-error"
-                  onClick={() => handleDeleteOffer(item)}
-                >
-                  <FaTrash />
-                </button>
+                    <button
+                      className="btn btn-error"
+                      onClick={() => handleDeleteOffer(item)}
+                    >
+                      <FaTrash />
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>

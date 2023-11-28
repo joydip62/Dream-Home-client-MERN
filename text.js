@@ -41,7 +41,7 @@ Done -----------  5. All properties page: This page will contain all the admin v
 page.See requirement 6)
 -This will be a private/protected route.
 
-======================================== 6 done =========================================
+==================================== 6 done =========================================
 
 Done -----------  6.Details page: This page should display detailed information about the property. What you will include in the detailed information is entirely up to you but make sure to add property title, description, price range and agent name.
 
@@ -53,13 +53,13 @@ Done -----------  -There will also be a review button on this page.Clicking this
 
 Done -----------  -This will be a private/protected route.
 
-====================================== 7 =========================================
+====================================== 7 done =========================================
 
 7.User Dashboard (Private Route):
 -When a user clicks on the Dashboard, he/she will be redirected to a page where there will be the following routes:
 Done ----------- A. My Profile.
 Done -----------  B. Wishlist.
-C. Property bought.
+Done -----------  C. Property bought.
 Done -----------  D. My reviews.
 
 Done ----------- My Profile page: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
@@ -97,7 +97,7 @@ Done -----------  Property bought: All the properties which the user has offered
 - offered amount.
 - status
 
--There will be a status on each card.initially the status will be “pending”.If the offer is accepted by the agent then this status will be “accepted” and a “Pay” button will appear on the card.Clicking the “Pay” button will redirect user to the payment page where the user can pay the offered amount through stripe or any other payment methods for that property.If the payment is completed then the status will be “bought” also payment transaction id will be shown in place of the pay button.
+Done -----------  -There will be a status on each card.initially the status will be “pending”.If the offer is accepted by the agent then this status will be “accepted” and a “Pay” button will appear on the card.Clicking the “Pay” button will redirect user to the payment page where the user can pay the offered amount through stripe or any other payment methods for that property.If the payment is completed then the status will be “bought” also payment transaction id will be shown in place of the pay button.
 
 install sersite npm install --save stripe
 install frontside npm install @stripe/react-stripe-js @stripe/stripe-js
