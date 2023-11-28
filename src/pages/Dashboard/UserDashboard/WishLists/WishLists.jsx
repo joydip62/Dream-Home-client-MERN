@@ -19,8 +19,7 @@ const WishLists = () => {
            if (res.data) {
              const userEmail = user.email;
              const filteredData = res.data.filter(
-               (item) =>
-                 (item.user === userEmail) 
+               (item) => item.user === userEmail && item.status === 'pending'
              );
              setUserWishLists(filteredData);
              return filteredData;

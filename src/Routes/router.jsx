@@ -24,6 +24,7 @@ import WishLists from "../pages/Dashboard/UserDashboard/WishLists/WishLists";
 import MakeOffer from "../pages/Dashboard/UserDashboard/MakeOffer/MakeOffer";
 import PropertyBought from "../pages/Dashboard/UserDashboard/PropertyBought/PropertyBought";
 import ApplyOffered from "../pages/Dashboard/UserDashboard/ApplyOffered/ApplyOffered";
+import RequestedProperties from "../pages/Dashboard/AgentDashboard/RequestedProperties/RequestedProperties";
 
 export const router = createBrowserRouter([
   {
@@ -146,6 +147,15 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/properties/${params.id}`),
       },
 
+      {
+        path: "agentRequestedProperties",
+        element: (
+          <AgentRoute>
+            <RequestedProperties/>
+          </AgentRoute>
+        )
+      },
+
       // ============================ user related route ====================
       {
         path: "userHome",
@@ -171,7 +181,7 @@ export const router = createBrowserRouter([
 
       {
         path: "userPropertyBoughtOffer",
-        element: <ApplyOffered/>
+        element: <ApplyOffered />,
       },
 
       {

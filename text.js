@@ -170,11 +170,8 @@ Requested/offered properties: On this page all the offers which are made by the 
 -> offered price.
 -> accept button
 -> reject button
--by default status will be pending.After clicking the accept button this status will be changed to
-“accepted” and both the accept and reject button will disappear and the status will be shown
-there.This will also happen for the reject button and “rejected” status will be shown.
--If the Agent accepts an offer for a specific property then other offers for that property will be rejected
-automatically and “rejected” status will be shown threre.
+-by default status will be pending.After clicking the accept button this status will be changed to “accepted” and both the accept and reject button will disappear and the status will be shown there.This will also happen for the reject button and “rejected” status will be shown.
+-If the Agent accepts an offer for a specific property then other offers for that property will be rejected automatically and “rejected” status will be shown threre.
 
 ============================================ 9 =========================================
 

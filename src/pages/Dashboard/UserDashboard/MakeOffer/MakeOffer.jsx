@@ -27,16 +27,21 @@ const MakeOffer = () => {
       offeredAmount: parseFloat(data.offeredAmount),
       propertyImage: property.propertyImage,
       agentName: property.agentName,
-      agentEmail: property.agentName,
+      agentEmail: property.agentEmail,
       buyerName: user.displayName,
       buyerEmail: user.email,
       offerDate: currentDate,
       status: "pending",
     };
+
+    // updated the wishlist status
+    await axiosSecure.patch(`/wishLists/${property._id}`);
+
     const propertyOfferResult = await axiosSecure.post(
       "/makeOffers",
       propertyOfferData
     );
+
     if (propertyOfferResult.data.insertedId) {
       Swal.fire({
         position: "top-end",
@@ -45,8 +50,8 @@ const MakeOffer = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-        reset();
-        navigate("/dashboard/userPropertyBoughtOffer");
+      reset();
+      navigate("/dashboard/userPropertyBoughtOffer");
     }
   };
   return (
