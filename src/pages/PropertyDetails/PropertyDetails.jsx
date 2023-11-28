@@ -88,7 +88,8 @@ const PropertyDetails = () => {
       propertyLocation: property.propertyLocation,
       propertyPrice: property.propertyPrice,
       agentName: property.agentName,
-      user: user?.email,
+      agentEmail: property.agentEmail,
+      user: user.email,
       status: "pending",
     };
     const wishListResult = await axiosSecure.post("/wishLists", wishListData);
@@ -116,8 +117,8 @@ const PropertyDetails = () => {
             <h1 className="text-5xl font-bold">{property?.propertyTitle}</h1>
             <p className="py-6">{property?.propertyDescription}</p>
             <p className="mb-2">Price : ${property?.propertyPrice}</p>
-            <p className="mb-2">Location : ${property?.propertyLocation}</p>
-            <p className="mb-2">Agent Name : ${property?.agentName}</p>
+            <p className="mb-2">Location : {property?.propertyLocation}</p>
+            <p className="mb-2 capitalize">Agent Name : {property?.agentName}</p>
             <button className="btn btn-primary" onClick={handleWishList}>
               Add to wishlist
             </button>

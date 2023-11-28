@@ -29,7 +29,7 @@ relevant toast/sweet alert. (Don't use the browser alert() function. otherwise, 
 
 ====================================== 5 Done =========================================
 
-Done -----------  5. All properties page: This page will contain all the admin verified properties which are added by all the real estate agents.Each card will contain the following informations:
+Done -----------  5. All properties page: This page will contain all the admin verified properties which are added by all the real estate agents.Each card will contain the following information:
 - Property image.
 - Property title.
 - property location.
@@ -41,31 +41,30 @@ Done -----------  5. All properties page: This page will contain all the admin v
 page.See requirement 6)
 -This will be a private/protected route.
 
-======================================== 6 =========================================
+======================================== 6 done =========================================
 
-6.Details page: This page should display detailed information about the property. What you will include in the detailed information is entirely up to you but make sure to add property title, description, price range and agent name.
+Done -----------  6.Details page: This page should display detailed information about the property. What you will include in the detailed information is entirely up to you but make sure to add property title, description, price range and agent name.
 
--There will be a button on the details page called “Add to wishlist”.Clicking this button will add the property on the wishlist page and also the information will be saved to the database.
+Done -----------  -There will be a button on the details page called “Add to wishlist”.Clicking this button will add the property on the wishlist page and also the information will be saved to the database.
 
--There will be a review section at the bottom of the details page where you have to show all the reviews for that specific property which are made by the users.
+Done -----------  -There will be a review section at the bottom of the details page where you have to show all the reviews for that specific property which are made by the users.
 
--There will also be a review button on this page.Clicking this button a user can add a review for this specific property through a modal.
+Done -----------  -There will also be a review button on this page.Clicking this button a user can add a review for this specific property through a modal.
 
--This will be a private/protected route.
+Done -----------  -This will be a private/protected route.
 
 ====================================== 7 =========================================
 
 7.User Dashboard (Private Route):
--When a user clicks on the Dashboard, he/she will be redirected to a page where there will be
-the following routes:
+-When a user clicks on the Dashboard, he/she will be redirected to a page where there will be the following routes:
 Done ----------- A. My Profile.
-B. Wishlist.
+Done -----------  B. Wishlist.
 C. Property bought.
-D. My reviews.
+Done -----------  D. My reviews.
 
 Done ----------- My Profile page: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
 
-Wishlist: This page will contain all the properties which the user have wishlist by clicking the “Add to wishlist” button on the details page.Each card will contain the following information:
+Done -----------  Wishlist: This page will contain all the properties which the user have wishlist by clicking the “Add to wishlist” button on the details page.Each card will contain the following information:
 - Property image.
 - Property title.
 - property location.
@@ -76,7 +75,7 @@ Wishlist: This page will contain all the properties which the user have wishlist
 - Make an offer button.
 - remove button.
 
--Clicking the “Make an offer” button will navigate the user to a new page where there will be a form which will have some input fields.
+Done -----------  -Clicking the “Make an offer” button will navigate the user to a new page where there will be a form which will have some input fields.
 - Property title (readonly)
 - Property location (readonly)
 - Agent name (readonly)
@@ -87,18 +86,18 @@ was specified by the agent of that property)
 - buying date.
 - offer button
 
--By clicking the offer button the user can offer an amount (This amount must be in between the agent specified price range.If the price is not in between the price range then the offer will not be completed and an error message will be shown) to the agent for that specific property.This information will be saved to the database and also it will be added to users “Property bought” page with the status “pending”.
+Done -----------  -By clicking the offer button the user can offer an amount (This amount must be in between the agent specified price range.If the price is not in between the price range then the offer will not be completed and an error message will be shown) to the agent for that specific property.This information will be saved to the database and also it will be added to users “Property bought” page with the status “pending”.
 
 
-Property bought: All the properties which the user has offered for will be shown here.Each card will have the following information.
+Done -----------  Property bought: All the properties which the user has offered for will be shown here.Each card will have the following information.
 - property location.
 - property title.
 - property image
 - Agent name
 - offered amount.
 - status
--There will be a status on each card.initially the status will be “pending”.If the offer is accepted by the agent then this status will be “accepted” and a “Pay” button will appear on the card.Clicking the “Pay”
-button will redirect user to the payment page where the user can pay the offered amount through stripe or any other payment methods for that property.If the payment is completed then the status will be “bought” also payment transaction id will be shown in place of the pay button.
+
+-There will be a status on each card.initially the status will be “pending”.If the offer is accepted by the agent then this status will be “accepted” and a “Pay” button will appear on the card.Clicking the “Pay” button will redirect user to the payment page where the user can pay the offered amount through stripe or any other payment methods for that property.If the payment is completed then the status will be “bought” also payment transaction id will be shown in place of the pay button.
 
 
 Done -----------  My reviews: In this page a logged in user will see only his/her reviews which he/she has given for any property.Each review card will contain
@@ -161,9 +160,9 @@ format.Each data will contain->
 - buyer email
 - buyer name
 - sold price.
-Requested/offered properties: On this page all the offers which are made by the users for the
-properties that the agent has added will be shown.These data will be shown in a tabular format and
-each data will contain
+
+
+Requested/offered properties: On this page all the offers which are made by the users for the properties that the agent has added will be shown.These data will be shown in a tabular format and each data will contain
 -> property title.
 -> Property location.
 -> buyer email

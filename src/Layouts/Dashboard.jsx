@@ -1,4 +1,4 @@
-import { FaCartPlus, FaHome, FaHouseDamage, FaJediOrder, FaList, FaPlus, FaStar, FaUser, FaUsers } from "react-icons/fa";
+import { FaCartPlus, FaHome, FaHouseDamage, FaJediOrder, FaList, FaPercent, FaPlus, FaStar, FaUser, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useAgent from "../hooks/useAgent";
@@ -101,11 +101,19 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink to="/dashboard/userPropertyBoughtOffer">
+                    <FaPercent />
+                    Apply Offer
+                  </NavLink>
+                    </li>
+                    
+                <li>
                   <NavLink to="/dashboard/userPropertyBought">
                     <FaHome />
                     Property bought
                   </NavLink>
-                </li>
+                    </li>
+                    
                 <li>
                   <NavLink to="/dashboard/userMyReviews">
                     <FaStar />

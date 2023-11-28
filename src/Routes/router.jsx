@@ -21,6 +21,9 @@ import ManageProperties from "../pages/Dashboard/AdminDashboard/ManageProperties
 import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 import MyReviews from "../pages/Dashboard/UserDashboard/MyReview/MyReviews";
 import WishLists from "../pages/Dashboard/UserDashboard/WishLists/WishLists";
+import MakeOffer from "../pages/Dashboard/UserDashboard/MakeOffer/MakeOffer";
+import PropertyBought from "../pages/Dashboard/UserDashboard/PropertyBought/PropertyBought";
+import ApplyOffered from "../pages/Dashboard/UserDashboard/ApplyOffered/ApplyOffered";
 
 export const router = createBrowserRouter([
   {
@@ -148,18 +151,33 @@ export const router = createBrowserRouter([
         path: "userHome",
         element: <UserHome />,
       },
-      
+
       {
         path: "userMyReviews",
-        element: <MyReviews/>
+        element: <MyReviews />,
       },
-      
+
       {
         path: "userWishLists",
-        element: <WishLists/>
+        element: <WishLists />,
       },
 
+      {
+        path: "userWishLists/:id",
+        element: <MakeOffer />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/wishLists/${params.id}`),
+      },
 
+      {
+        path: "userPropertyBoughtOffer",
+        element: <ApplyOffered/>
+      },
+
+      {
+        path: "userPropertyBought",
+        element: <PropertyBought />,
+      },
     ],
   },
 ]);

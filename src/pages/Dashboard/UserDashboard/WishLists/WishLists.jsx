@@ -98,8 +98,10 @@ const WishLists = () => {
                     <td>{item?.agentName}</td>
                     <td>{item?.status}</td>
                     <th>
-                      <Link to={`/dashboard/makeAnOffer/${item._id}`}>
-                        <button className="btn btn-info btn-sm">Make an offer</button>
+                      <Link to={`/dashboard/userWishLists/${item._id}`}>
+                        <button className="btn btn-info btn-sm">
+                          Make an offer
+                        </button>
                       </Link>
                       <button
                         className="btn btn-error btn-sm ml-5"
