@@ -84,7 +84,7 @@ const ApplyOffered = () => {
                 {item?.status === "rejected" || item?.status === "pending" ? (
                   <></>
                 ) : (
-                  <Link to={`/dashboard/agentEditProperties/${item._id}`}>
+                  <Link to={`/dashboard/userPay/${item._id}`}>
                     <button className="btn btn-info">Pay</button>
                   </Link>
                 )}

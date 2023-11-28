@@ -25,6 +25,7 @@ import MakeOffer from "../pages/Dashboard/UserDashboard/MakeOffer/MakeOffer";
 import PropertyBought from "../pages/Dashboard/UserDashboard/PropertyBought/PropertyBought";
 import ApplyOffered from "../pages/Dashboard/UserDashboard/ApplyOffered/ApplyOffered";
 import RequestedProperties from "../pages/Dashboard/AgentDashboard/RequestedProperties/RequestedProperties";
+import Pay from "../pages/Dashboard/UserDashboard/Pay/Pay";
 
 export const router = createBrowserRouter([
   {
@@ -151,9 +152,9 @@ export const router = createBrowserRouter([
         path: "agentRequestedProperties",
         element: (
           <AgentRoute>
-            <RequestedProperties/>
+            <RequestedProperties />
           </AgentRoute>
-        )
+        ),
       },
 
       // ============================ user related route ====================
@@ -187,6 +188,12 @@ export const router = createBrowserRouter([
       {
         path: "userPropertyBought",
         element: <PropertyBought />,
+      },
+      {
+        path: "userPay/:id",
+        element: <Pay />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/userPay/${params.id}`),
       },
     ],
   },
