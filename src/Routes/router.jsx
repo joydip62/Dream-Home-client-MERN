@@ -26,6 +26,8 @@ import PropertyBought from "../pages/Dashboard/UserDashboard/PropertyBought/Prop
 import ApplyOffered from "../pages/Dashboard/UserDashboard/ApplyOffered/ApplyOffered";
 import RequestedProperties from "../pages/Dashboard/AgentDashboard/RequestedProperties/RequestedProperties";
 import Payment from "../pages/Dashboard/UserDashboard/Payment/Payment";
+import SoldProperties from "../pages/Dashboard/AgentDashboard/SoldProperties/SoldProperties";
+import ManageReviews from "../pages/Dashboard/AdminDashboard/ManageReviews/ManageReviews";
 
 export const router = createBrowserRouter([
   {
@@ -94,6 +96,16 @@ export const router = createBrowserRouter([
           </AdminRoute>
         ),
       },
+      
+      {
+        path: "allUserManageReview",
+        element: (
+          <AdminRoute>
+            <ManageReviews/>
+          </AdminRoute>
+        ),
+      },
+
 
       {
         path: "updateUser/:id",
@@ -156,6 +168,16 @@ export const router = createBrowserRouter([
           </AgentRoute>
         ),
       },
+      
+      {
+        path: "agentSoldProperties",
+        element: (
+          <AgentRoute>
+            <SoldProperties/>
+          </AgentRoute>
+        ),
+      },
+
 
       // ============================ user related route ====================
       {

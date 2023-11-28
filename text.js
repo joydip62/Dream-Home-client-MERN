@@ -99,9 +99,6 @@ Done -----------  Property bought: All the properties which the user has offered
 
 Done -----------  -There will be a status on each card.initially the status will be “pending”.If the offer is accepted by the agent then this status will be “accepted” and a “Pay” button will appear on the card.Clicking the “Pay” button will redirect user to the payment page where the user can pay the offered amount through stripe or any other payment methods for that property.If the payment is completed then the status will be “bought” also payment transaction id will be shown in place of the pay button.
 
-install sersite npm install --save stripe
-install frontside npm install @stripe/react-stripe-js @stripe/stripe-js
-
 Done -----------  My reviews: In this page a logged in user will see only his/her reviews which he/she has given for any property.Each review card will contain
 - property title
 - agent name
@@ -110,7 +107,7 @@ Done -----------  My reviews: In this page a logged in user will see only his/he
 - delete button.
 -If the user clicks the delete button then the review will be deleted from the my reviews page and also from the database.
 
-============================================ 8 =========================================
+======================================= 8 done =========================================
 
 8.Agent Dashboard (Private Route and only the users who has the agent
 role will be able to see these routes):
@@ -119,7 +116,7 @@ be the following routes:
 Done ----------- A. Agent Profile .
 Done ----------- B. Add Property.
 Done ----------- C. My added properties.
-D. My sold properties.
+Done -----------  D. My sold properties.
 Done ----------- E. Requested properties.
 Done ----------- Agent Profile: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
 
@@ -154,7 +151,7 @@ Done -----------  -Clicking on the `Update button` will redirect the user to a f
 -Initially these fields will be filled up by previous values but the agent can modify these values.If the user clicks the submit button then the data will be updated in the database.
 clicking the delete button will remove the property from the “My added properties” and also from the database.
 
-My sold properties: On this page all the sold properties of the specific agent will be shown.Only the properties for which the buyer has paid for will be shown here.Show these data in a tabular format.Each data will contain->
+Done -----------  My sold properties: On this page all the sold properties of the specific agent will be shown.Only the properties for which the buyer has paid for will be shown here.Show these data in a tabular format.Each data will contain->
 - property title.
 - Property location.
 - buyer email
@@ -181,7 +178,7 @@ be the following routes:
 Done ----------- A. Admin Profile.
 Done ----------- B. Manage Properties.
 Done ----------- C. Manage Users.
-D. Manage reviews.
+Done ----------- D. Manage reviews.
 
 Done ----------- Admin Profile: in this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you  wish.
 
@@ -213,7 +210,7 @@ database by clicking the delete user button.
 -If the admin clicks the “Mark as fraud” button for any agent then that specific agent will be marked as fraud and a “Fraud” status will be shown in place of “Make admin” , “Make agent” and “Mark as Fraud” button also all the properties that the agent has added will be removed from the “All properties” page and advertisement section on the homepage and that agent will not be able to add any properties in the future.
 
 
-Manage reviews: All the user reviews for all the properties will be shown here.Each card will contain reviewer image,reviewer email,reviewer name,review and a delete button.If the admin clicks the delete button of any review card then that review will be removed from this page and also from the users page who has made this review.
+Done ----------- Manage reviews: All the user reviews for all the properties will be shown here.Each card will contain reviewer image,reviewer email,reviewer name,review and a delete button.If the admin clicks the delete button of any review card then that review will be removed from this page and also from the users page who has made this review.
 
 ==================================== 10 done =========================================
 

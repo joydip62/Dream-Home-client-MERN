@@ -54,106 +54,118 @@ const AddProperties = () => {
     }
   };
   return (
-    <div>
-      <h2 className="text-5xl font-bold">Add The Property</h2>
-      <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-control w-full">
-            <label className="label">
-              <span className="label-text">Property title*</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Type here"
-              className="input input-bordered w-full"
-              {...register("propertyTitle", { required: true })}
-            />
-            {errors.propertyTitle && <span>This field is required</span>}
-          </div>
+    <>
+      {user?.status === "fraud" ? (
+        <h2 className="text-5xl font-bold text-red-600">
+          Sorry! You are not able to add property
+        </h2>
+      ) : (
+        <div>
+          <h2 className="text-5xl font-bold">Add The Property</h2>
+          <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text">Property title*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  className="input input-bordered w-full"
+                  {...register("propertyTitle", { required: true })}
+                />
+                {errors.propertyTitle && <span>This field is required</span>}
+              </div>
 
-          <div className="flex gap-6">
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Property location*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Type here"
-                className="input input-bordered w-full"
-                {...register("propertyLocation", { required: true })}
-              />
-              {errors.propertyLocation && <span>This field is required</span>}
-            </div>
+              <div className="flex gap-6">
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Property location*</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Type here"
+                    className="input input-bordered w-full"
+                    {...register("propertyLocation", { required: true })}
+                  />
+                  {errors.propertyLocation && (
+                    <span>This field is required</span>
+                  )}
+                </div>
 
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Property Price*</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Type here"
-                className="input input-bordered w-full"
-                max="999999.99"
-                {...register("propertyPrice", { required: true })}
-              />
-              {errors.propertyPrice && <span>This field is required</span>}
-            </div>
-          </div>
-          <div className="flex gap-6 mt-5">
-            <div className="form-control w-full">
-              <input
-                type="file"
-                {...register("propertyImage", { required: true })}
-                className="file-input file-input-bordered file-input-md w-full"
-              />
-              {errors.propertyImage && <span>This field is required</span>}
-            </div>
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Property Description*</span>
-            </label>
-            <textarea
-              className="textarea textarea-bordered h-24"
-              placeholder="Type here"
-              {...register("propertyDescription", { required: true })}
-            ></textarea>
-            {errors.propertyDescription && <span>This field is required</span>}
-          </div>
-          <div className="flex gap-6">
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Agent Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Type here"
-                className="input input-bordered w-full"
-                defaultValue={user.displayName}
-                {...register("agentName", { disabled: true })}
-              />
-              {errors.agentName && <span>This field is required</span>}
-            </div>
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Property Price*</span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Type here"
+                    className="input input-bordered w-full"
+                    max="999999.99"
+                    {...register("propertyPrice", { required: true })}
+                  />
+                  {errors.propertyPrice && <span>This field is required</span>}
+                </div>
+              </div>
+              <div className="flex gap-6 mt-5">
+                <div className="form-control w-full">
+                  <input
+                    type="file"
+                    {...register("propertyImage", { required: true })}
+                    className="file-input file-input-bordered file-input-md w-full"
+                  />
+                  {errors.propertyImage && <span>This field is required</span>}
+                </div>
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Property Description*</span>
+                </label>
+                <textarea
+                  className="textarea textarea-bordered h-24"
+                  placeholder="Type here"
+                  {...register("propertyDescription", { required: true })}
+                ></textarea>
+                {errors.propertyDescription && (
+                  <span>This field is required</span>
+                )}
+              </div>
+              <div className="flex gap-6">
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Agent Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Type here"
+                    className="input input-bordered w-full"
+                    defaultValue={user.displayName}
+                    {...register("agentName", { disabled: true })}
+                  />
+                  {errors.agentName && <span>This field is required</span>}
+                </div>
 
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Agent Email</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Type here"
-                className="input input-bordered w-full"
-                defaultValue={user.email}
-                {...register("agentEmail", { disabled: true })}
-              />
-              {errors.agentEmail && <span>This field is required</span>}
-            </div>
-          </div>
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Agent Email</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Type here"
+                    className="input input-bordered w-full"
+                    defaultValue={user.email}
+                    {...register("agentEmail", { disabled: true })}
+                  />
+                  {errors.agentEmail && <span>This field is required</span>}
+                </div>
+              </div>
 
-          <button className="btn mt-5">Add Property</button>
-        </form>
-      </div>
-    </div>
+              <button className="btn mt-5">Add Property</button>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

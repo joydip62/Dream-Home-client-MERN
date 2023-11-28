@@ -52,6 +52,13 @@ const Dashboard = () => {
                     Manage Properties
                   </NavLink>
                 </li>
+
+                <li>
+                  <NavLink to="/dashboard/allUserManageReview">
+                    <FaStar />
+                    Manage Properties
+                  </NavLink>
+                </li>
               </>
             ) : isAgent ? (
               <>
@@ -105,15 +112,15 @@ const Dashboard = () => {
                     <FaPercent />
                     Apply Offer
                   </NavLink>
-                    </li>
-                    
+                </li>
+
                 <li>
                   <NavLink to="/dashboard/userPropertyBought">
                     <FaHome />
                     Property bought
                   </NavLink>
-                    </li>
-                    
+                </li>
+
                 <li>
                   <NavLink to="/dashboard/userMyReviews">
                     <FaStar />

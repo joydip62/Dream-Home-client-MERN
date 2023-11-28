@@ -13,32 +13,57 @@ const AllUser = () => {
       return res.data;
     },
   });
-    // delete user
-    const handleDeleteUser = (item) => {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                axiosSecure.delete(`/users/${item._id}`).then(res => {
-                  if (res.data.deletedCount > 0) {
-                      refetch();
-                       Swal.fire({
-                         title: "Deleted!",
-                         text: "The user has been deleted.",
-                         icon: "success",
-                       });
-                  }
-              })
-           
+  // delete user
+  const handleDeleteUser = (item) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/users/${item._id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Deleted!",
+              text: "The user has been deleted.",
+              icon: "success",
+            });
           }
         });
-    }
+      }
+    });
+  };
+
+  // making Fraud
+  const handleMarkFraud = (item) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "To make this agent as a fraud!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, do it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.patch(`/users/${item._id}`).then((res) => {
+          if (res.data.modifiedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Done!",
+              text: "The agent marked as fraud",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
+  }
 
   return (
     <div>
@@ -74,19 +99,33 @@ const AllUser = () => {
                   </div>
                 </td>
                 <td>{item?.role}</td>
-                <th>
-                  <Link to={`/dashboard/updateUser/${item._id}`}>
-                    <button className="btn btn-info btn-sm">
-                      <FaEdit />
+                {item?.status === "fraud" ? (
+                  <td>Fraud</td>
+                ) : (
+                  <th>
+                    <Link to={`/dashboard/updateUser/${item._id}`}>
+                      <button className="btn btn-info btn-sm">
+                        <FaEdit />
+                      </button>
+                    </Link>
+                    <button
+                      className="btn btn-error btn-sm ml-5"
+                      onClick={() => handleDeleteUser(item)}
+                    >
+                      <FaTrash />
                     </button>
-                  </Link>
-                  <button
-                    className="btn btn-error btn-sm ml-5"
-                    onClick={() => handleDeleteUser(item)}
-                  >
-                    <FaTrash />
-                  </button>
-                </th>
+                    {item?.role === "agent" ? (
+                      <button
+                        className="btn btn-error btn-sm ml-5"
+                        onClick={() => handleMarkFraud(item)}
+                      >
+                        Mark as fraud
+                      </button>
+                    ) : (
+                      <></>
+                    )}
+                  </th>
+                )}
               </tr>
             ))}
           </tbody>
