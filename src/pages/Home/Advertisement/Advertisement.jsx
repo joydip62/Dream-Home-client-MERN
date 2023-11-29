@@ -46,7 +46,7 @@ const Advertisement = () => {
                 <p>{item?.propertyPrice}</p>
               </div>
               <Link to={`/propertyDetails/${item._id}`}>
-                <button className="btn btn-primary w-full">Details</button>
+                <button className="btn btn-info w-full">Details</button>
               </Link>
             </div>
           ))}

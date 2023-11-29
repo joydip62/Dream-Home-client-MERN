@@ -253,8 +253,8 @@ Done -----------Tablet responsiveness is optional.
 ====================================== 12 =========================================
 
 Bonus Tasks
-1. Add a search functionality on the “All properties” page based on the property title.
-2. Implement a sort functionality based on the price range on the “All properties” page.
+Done -----------1. Add a search functionality on the “All properties” page based on the property title.
+Done -----------2. Implement a sort functionality based on the price range on the “All properties” page.
 Done ----------- 3. Implement JWT on login (Email/Password and social) and store the token.
 Done ----------- 4. Add a section on My sold properties page of the Agent dashboard where the total property sold amount of a specific agent will be shown.
 
@@ -264,7 +264,7 @@ Done ----------- -If a property is not already advertised then the “Remove Adv
 
 Done ----------- -On clicking the “Advertise" button an admin can advertise a specific property.This property will be shown in the advertisement section on the homepage also the “Advertise” button will be disabled and “Remove Advertise" button will be enabled.
 
--On clicking the “Remove Advertise” button an admin can remove a property from the
+Done ------------On clicking the “Remove Advertise” button an admin can remove a property from the
 advertisement section on the homepage.After this “Remove Advertise” button will be disabled and “Advertise" button will be enabled.
 
 Done ----------- -Admin can advertise at most 6 properties.If admin tries to advertise more properties then an error message will be shown.

@@ -3,7 +3,7 @@ import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAdmin from "../../../hooks/useAdmin";
 import useAgent from "../../../hooks/useAgent";
-
+import logo from "../../../assets/homelogo.png";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -95,13 +95,16 @@ const Navbar = () => {
             {listItem}
           </ul>
         </div>
-        <b className="text-2xl">Dream Home</b>
+        <div className="flex items-center">
+          <img src={logo} alt="" className="w-2/3 md:w-20" />
+          <b className="hidden md:block md:text-2xl w-1/2 md:w-full ">Dream Home</b>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{listItem}</ul>
       </div>
       <div className="navbar-end">
-        <ul className="gap-5 md:menu md:menu-horizontal px-1">
+        <ul className="gap-5 menu-horizontal md:menu md:menu-horizontal px-1">
           {user ? (
             <>
               <li>
@@ -112,7 +115,10 @@ const Navbar = () => {
                   <img alt="" src={user?.photoURL} />
                 </div>
               </li>
-              <button className="btn btn-info btn-sm md:btn" onClick={handleLogout}>
+              <button
+                className="btn btn-info btn-sm md:btn"
+                onClick={handleLogout}
+              >
                 Logout
               </button>
             </>
