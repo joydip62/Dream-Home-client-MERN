@@ -17,7 +17,7 @@ const RequestedProperties = () => {
         if (res.data) {
           const userEmail = user.email;
           const filteredData = res.data.filter(
-            (item) => item.agentEmail === userEmail
+            (item) => item.agentEmail === userEmail && item.status === "pending"
           );
           setRequestedProperty(filteredData);
           return filteredData;

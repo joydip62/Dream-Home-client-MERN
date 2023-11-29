@@ -28,6 +28,7 @@ import RequestedProperties from "../pages/Dashboard/AgentDashboard/RequestedProp
 import Payment from "../pages/Dashboard/UserDashboard/Payment/Payment";
 import SoldProperties from "../pages/Dashboard/AgentDashboard/SoldProperties/SoldProperties";
 import ManageReviews from "../pages/Dashboard/AdminDashboard/ManageReviews/ManageReviews";
+import AdvertiseProperties from "../pages/Dashboard/AdminDashboard/AdvertiseProperties/AdvertiseProperties";
 
 export const router = createBrowserRouter([
   {
@@ -57,7 +58,10 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/properties/${params.id}`),
+          // fetch(`http://localhost:5000/properties/${params.id}`),
+          fetch(
+            `https://b8a12-server-side-joydip62.vercel.app/properties/${params.id}`
+          ),
       },
 
       {
@@ -96,22 +100,32 @@ export const router = createBrowserRouter([
           </AdminRoute>
         ),
       },
-      
+
       {
         path: "allUserManageReview",
         element: (
           <AdminRoute>
-            <ManageReviews/>
+            <ManageReviews />
           </AdminRoute>
         ),
       },
-
 
       {
         path: "updateUser/:id",
         element: <EditUser />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/users/${params.id}`),
+          fetch(
+            `https://b8a12-server-side-joydip62.vercel.app/users/${params.id}`
+          ),
+      },
+
+      {
+        path: "advertiseProperties",
+        element: (
+          <AdminRoute>
+            <AdvertiseProperties/>
+          </AdminRoute>
+        ),
       },
 
       {
@@ -157,7 +171,9 @@ export const router = createBrowserRouter([
           </AgentRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/properties/${params.id}`),
+          fetch(
+            `https://b8a12-server-side-joydip62.vercel.app/properties/${params.id}`
+          ),
       },
 
       {
@@ -168,16 +184,15 @@ export const router = createBrowserRouter([
           </AgentRoute>
         ),
       },
-      
+
       {
         path: "agentSoldProperties",
         element: (
           <AgentRoute>
-            <SoldProperties/>
+            <SoldProperties />
           </AgentRoute>
         ),
       },
-
 
       // ============================ user related route ====================
       {
@@ -199,7 +214,9 @@ export const router = createBrowserRouter([
         path: "userWishLists/:id",
         element: <MakeOffer />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/wishLists/${params.id}`),
+          fetch(
+            `https://b8a12-server-side-joydip62.vercel.app/wishLists/${params.id}`
+          ),
       },
 
       {
@@ -215,7 +232,9 @@ export const router = createBrowserRouter([
         path: "userPay/:id",
         element: <Payment />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/userPay/${params.id}`),
+          fetch(
+            `https://b8a12-server-side-joydip62.vercel.app/userPay/${params.id}`
+          ),
       },
     ],
   },

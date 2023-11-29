@@ -197,7 +197,7 @@ Done ----------- -if the admin clicks the verify button then that property will 
 Done ----------- If the admin clicks the reject button then the property will not be added to the all properties page and “rejected” status will be shown in place of verify and reject button.
 
 
-Manage users: Show all the users in a tabular form where each row will have:
+Done ----------- Manage users: Show all the users in a tabular form where each row will have:
 ● User name
 ● User email
 ● Make admin button
@@ -254,7 +254,7 @@ Bonus Tasks
 1. Add a search functionality on the “All properties” page based on the property title.
 2. Implement a sort functionality based on the price range on the “All properties” page.
 Done ----------- 3. Implement JWT on login (Email/Password and social) and store the token.
-4. Add a section on My sold properties page of the Agent dashboard where the total property sold amount of a specific agent will be shown.
+Done ----------- 4. Add a section on My sold properties page of the Agent dashboard where the total property sold amount of a specific agent will be shown.
 5.Add another route on the admin dashboard called “Advertise property”.In this route all the admin verified properties will be shown in a tabular format.Each data will contain property image,property title,price range,Agent name “Advertise” and “Remove Advertise” button.
 -If a property is already advertised then the “Advertise” button will be disabled and “Remove
 Advertise” button will be enabled.

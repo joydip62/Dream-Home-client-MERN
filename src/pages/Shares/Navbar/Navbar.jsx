@@ -42,7 +42,7 @@ const Navbar = () => {
       <li>
         <NavLink to="allProperties">All properties</NavLink>
       </li>
-
+      
       {user && isAdmin && (
         <li>
           <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
@@ -56,9 +56,15 @@ const Navbar = () => {
       )}
 
       {user && !isAdmin && !isAgent && (
-        <li>
-          <NavLink to="/dashboard/userHome">Dashboard</NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink to="/dashboard/userHome">Dashboard</NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/dashboard/userWishLists">WishList</NavLink>
+          </li>
+        </>
       )}
       {user ? (
         <>

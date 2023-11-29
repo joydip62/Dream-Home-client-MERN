@@ -29,7 +29,7 @@ const Profile = () => {
           <div className="card card-side bg-base-100 shadow-xl">
             <figure>
               <img
-                src={userData.userData.photoURL}
+                src={userData.userData?.photoURL}
                 alt="Movie"
                 className="w-40"
               />
