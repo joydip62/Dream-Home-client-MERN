@@ -66,31 +66,6 @@ const Navbar = () => {
           </li>
         </>
       )}
-      {user ? (
-        <>
-          <li>
-            <p className="text-xl">{user?.displayName}</p>
-          </li>
-          <li>
-            <div className="w-16 rounded-full">
-              <img alt="" src={user?.photoURL} />
-            </div>
-          </li>
-          <button className="btn btn-info" onClick={handleLogout}>
-            Logout
-          </button>
-        </>
-      ) : (
-        <>
-          <li>
-            <NavLink to="/login">Login</NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/register">Register</NavLink>
-          </li>
-        </>
-      )}
     </>
   );
   return (
@@ -120,13 +95,39 @@ const Navbar = () => {
             {listItem}
           </ul>
         </div>
-        <b className="">Dream Home</b>
+        <b className="text-2xl">Dream Home</b>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{listItem}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <ul className="gap-5 md:menu md:menu-horizontal px-1">
+          {user ? (
+            <>
+              <li>
+                <p className="text-xl">{user?.displayName}</p>
+              </li>
+              <li>
+                <div className="w-8 md:w-16 rounded-full">
+                  <img alt="" src={user?.photoURL} />
+                </div>
+              </li>
+              <button className="btn btn-info btn-sm md:btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+
+              <li>
+                <NavLink to="/register">Register</NavLink>
+              </li>
+            </>
+          )}
+        </ul>
       </div>
     </div>
   );

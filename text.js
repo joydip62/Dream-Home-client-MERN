@@ -255,15 +255,17 @@ Bonus Tasks
 2. Implement a sort functionality based on the price range on the “All properties” page.
 Done ----------- 3. Implement JWT on login (Email/Password and social) and store the token.
 Done ----------- 4. Add a section on My sold properties page of the Agent dashboard where the total property sold amount of a specific agent will be shown.
-5.Add another route on the admin dashboard called “Advertise property”.In this route all the admin verified properties will be shown in a tabular format.Each data will contain property image,property title,price range,Agent name “Advertise” and “Remove Advertise” button.
--If a property is already advertised then the “Advertise” button will be disabled and “Remove
-Advertise” button will be enabled.
--If a property is not already advertised then the “Remove Advertise” button will be disabled and
-“Advertise” button will be enabled.
--On clicking the “Advertise" button an admin can advertise a specific property.This property will be shown in the advertisement section on the homepage also the “Advertise” button will be disabled and “Remove Advertise" button will be enabled.
+
+Done ----------- 5.Add another route on the admin dashboard called “Advertise property”.In this route all the admin verified properties will be shown in a tabular format.Each data will contain property image,property title,price range,Agent name “Advertise” and “Remove Advertise” button.
+Done ----------- -If a property is already advertised then the “Advertise” button will be disabled and “Remove Advertise” button will be enabled.
+Done ----------- -If a property is not already advertised then the “Remove Advertise” button will be disabled and “Advertise” button will be enabled.
+
+Done ----------- -On clicking the “Advertise" button an admin can advertise a specific property.This property will be shown in the advertisement section on the homepage also the “Advertise” button will be disabled and “Remove Advertise" button will be enabled.
+
 -On clicking the “Remove Advertise” button an admin can remove a property from the
 advertisement section on the homepage.After this “Remove Advertise” button will be disabled and “Advertise" button will be enabled.
--Admin can advertise at most 6 properties.If admin tries to advertise more properties then an error message will be shown.
+
+Done ----------- -Admin can advertise at most 6 properties.If admin tries to advertise more properties then an error message will be shown.
 
 =================================== Optional =========================================
 

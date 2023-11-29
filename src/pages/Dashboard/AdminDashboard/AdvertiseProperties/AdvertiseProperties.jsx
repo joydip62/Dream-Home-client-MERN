@@ -25,25 +25,50 @@ const AdvertiseProperties = () => {
       }
     },
   });
+    
 
-  //  make advertise offer
-  const handleMakeAdvertise = async(item) => {
-      const data = {
-        advertise: "active"
-        };
-      const result = await axiosSecure.patch(`/properties/advertise/${item._id}`, data);
-        
-      if (result.data.acknowledged) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          text: "The property Mark as advertise successfully",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        refetch();
+      
+    //  make advertise offer
+    const handleMakeAdvertise = async (item) => {
+      // Check if propertyData is an array
+      if (!Array.isArray(propertyData)) {
+        console.error("propertyData is not an array.");
+        return;
       }
-  };
+      const activeAdvertiseProperties = propertyData.filter(
+        (property) => property?.advertise === "active"
+      );
+
+      if (activeAdvertiseProperties.length >= 6) {
+        // Display a message indicating the limit has been reached
+        Swal.fire({
+          icon: "warning",
+          text: "You cannot make more than 6 properties for advertising.",
+        });
+      } else {
+        const data = {
+          advertise: "active",
+        };
+
+        const result = await axiosSecure.patch(
+          `/properties/advertise/${item._id}`,
+          data
+        );
+
+        if (result.data.acknowledged) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            text: "The property Marked as advertised successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          refetch();
+        }
+      }
+    };
+    
+    
   // delete advertise property
   const handleDeleteAdvertiseProperty = async(item) => {
     const data = {
