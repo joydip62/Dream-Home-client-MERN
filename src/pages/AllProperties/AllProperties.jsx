@@ -2,12 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const AllProperties = () => {
-  const { user } = useAuth();
-  console.log(user);
     const [propertyData, setPropertyData] = useState([]);
     const axiosSecure = useAxiosSecure();
     const { data: properties = [] } = useQuery({

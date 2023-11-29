@@ -1,5 +1,5 @@
 /**
- * ====================================== 1 done =========================================
+ * =================================== 1 done =========================================
 Done -----------  * 1. Home page will have a navbar, banner/slider, Advertisement section,Latest User review section and a footer.
 Done -----------  Advertisement section: In this section there will be at least 4 cards which will contain
 - property image.
@@ -241,15 +241,14 @@ Done ----------- should appear on the navbar. If
 Done ----------- the user clicks on the logout button, make sure to log him/her out.
 Done ----------- 2. Add a 404 page (not found page)
 
-3. **Commits & readme:**
-- Minimum 20 meaningful git commits on the client-side repository.
-- Minimum 10 meaningful commits on the server-side repository.
-- Create a readme for client-side and write about your project (at least 5 bullet points). ** Remember
-to add your client-side live link to your website here.**
-4. Also, implement at least `one extra login` which could be (facebook, github, google, etc).
-5. After reloading the page of a private route, the user should not be redirected to the login page.
-6. Make the website responsive. Make sure the site looks different on desktop and mobile responsive.
-Tablet responsiveness is optional.
+Done -----------3. **Commits & readme:**
+Done ------------ Minimum 20 meaningful git commits on the client-side repository.
+Done ------------ Minimum 10 meaningful commits on the server-side repository.
+- Create a readme for client-side and write about your project (at least 5 bullet points). ** Remember to add your client-side live link to your website here.**
+Done -----------4. Also, implement at least `one extra login` which could be (facebook, github, google, etc).
+Done -----------5. After reloading the page of a private route, the user should not be redirected to the login page.
+Done -----------6. Make the website responsive. Make sure the site looks different on desktop and mobile responsive.
+Done -----------Tablet responsiveness is optional.
 
 ====================================== 12 =========================================
 
