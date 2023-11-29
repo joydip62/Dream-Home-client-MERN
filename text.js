@@ -1,15 +1,16 @@
 /**
-design -- --- * 1. Home page will have a navbar, banner/slider, Advertisement section,Latest User review section and a footer.
-design --- - Advertisement section: In this section there will be at least 4 cards which will contain
+ * ====================================== 1 done =========================================
+Done -----------  * 1. Home page will have a navbar, banner/slider, Advertisement section,Latest User review section and a footer.
+Done -----------  Advertisement section: In this section there will be at least 4 cards which will contain
 - property image.
 - Property location.
 - price range.
 - verification status.
 
-- Details button.(clicking on the details button will redirect the user to the property
+Done ----------- - Details button.(clicking on the details button will redirect the user to the property
 details page.See requirement 6)
 
-- Latest User review: In this section there will be at least 3 latest(recently added) user reviews which will contain:
+Done ----------- - Latest User review: In this section there will be at least 3 latest(recently added) user reviews which will contain:
 - Reviewer name.
 - Reviewer Image.
 - Review description.
@@ -118,6 +119,7 @@ Done ----------- B. Add Property.
 Done ----------- C. My added properties.
 Done -----------  D. My sold properties.
 Done ----------- E. Requested properties.
+
 Done ----------- Agent Profile: On this page there will be some information about the logged in user.The information must include user name,user image,role(if the user is a regular user then don’t show anything).You can add other relevant information if you wish.
 
 Done ----------- Add Property: Create an `Add Property` page where there will be a form for the agent to add a property. The form will have:
@@ -128,6 +130,7 @@ Done ----------- Add Property: Create an `Add Property` page where there will be
 - Agent email(readonly).
 - Price range.
 - Add property button.
+
 Done ----------- On clicking the “Add property” button the property will be saved into the database.
 
 Done -----------  My added properties: On this page an agent will see all his/her added properties.each card will contain
