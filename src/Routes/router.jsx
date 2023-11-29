@@ -6,7 +6,7 @@ import AdminHome from "../pages/Dashboard/AdminDashboard/AdminHome";
 import AllUser from "../pages/Dashboard/AdminDashboard/AllUser/AllUser";
 import EditUser from "../pages/Dashboard/AdminDashboard/AllUser/EditUser";
 import Home from "../pages/Home/Home/Home";
-// import NotFoundPage from "../pages/Error/NotFoundPage";
+import NotFoundPage from "../pages/Error/NotFoundPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    // errorElement: <NotFoundPage />,
+    errorElement: <NotFoundPage />,
     children: [
       {
         path: "/",

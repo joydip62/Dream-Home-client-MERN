@@ -56,7 +56,7 @@ const Dashboard = () => {
                 <li>
                   <NavLink to="/dashboard/allUserManageReview">
                     <FaStar />
-                    Manage Properties
+                    Manage Review
                   </NavLink>
                 </li>
 

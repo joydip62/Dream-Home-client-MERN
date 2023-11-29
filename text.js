@@ -24,9 +24,9 @@ Done ----------- 2. The navbar will have a website name with the logo, Home, All
 Done ----------- 3. After successfully performing any CRUD - Create, Read, Update, Delete operation, please, show a
 relevant toast/sweet alert. (Don't use the browser alert() function. otherwise, marks will be reduced)
 
-============================================ 4 =========================================
+================================== 4 done =========================================
 
-4. Add two extra sections to the home page in addition to the sections mentioned above.
+Done -----------  4. Add two extra sections to the home page in addition to the sections mentioned above.
 
 ====================================== 5 Done =========================================
 
@@ -173,7 +173,7 @@ Done -----------  Requested/offered properties: On this page all the offers whic
 -by default status will be pending.After clicking the accept button this status will be changed to “accepted” and both the accept and reject button will disappear and the status will be shown there.This will also happen for the reject button and “rejected” status will be shown.
 -If the Agent accepts an offer for a specific property then other offers for that property will be rejected automatically and “rejected” status will be shown threre.
 
-============================================ 9 =========================================
+========================================== 9 done =========================================
 
 9.Admin Dashboard (Private Route and only the users who has the admin role will be able to see these routes):
 -When an admin clicks on the Dashboard, he/she will be redirected to a page where there will
@@ -231,9 +231,9 @@ Done ----------- - email doesn't match
 Done ----------- You can take the error message from Firebase. You can show the error below Done ----------- the input fields or via
 Done ----------- alert/toast. If you use alert/toast, do not implement the browser alert.
 
-===================================== 11 =========================================
+===================================== 11 done =========================================
 
-11.Use Tanstack query with mutation for data fetching and posting.
+Done -----------11.Use Tanstack query with mutation for data fetching and posting.
 You must do the the following:
 
 Done ----------- 1. Once logged in, the user name, profile picture and the logout button 
