@@ -19,6 +19,16 @@ Project features
 
 ##
 
+Technologies are use :
+##
+
+- Tailwind
+- daisyUI
+- ReactJS
+- Express.js
+- MongoDB
+- Firebase
+
 Live link
 
 [Dream Home](https://dream-home.surge.sh/)
